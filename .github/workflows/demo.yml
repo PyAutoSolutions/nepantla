@@ -1,0 +1,70 @@
+# Publica la demostración estática (AUDIO DE PRUEBA) en GitHub Pages.
+#
+# Para activarla: en GitHub, Settings -> Pages -> Source: "GitHub Actions",
+# y luego Actions -> "Demo estático" -> Run workflow. En el plan gratuito,
+# Pages solo funciona con repositorios públicos.
+#
+# Mientras Pages no esté activado, el flujo no publica nada y termina sin
+# error: subir el código nunca deja una ejecución en rojo.
+#
+# La demostración no tiene servidor: no envía contadores ni reportes y no
+# incluye el estudio de grabación. Solo lleva paquetes marcados is_test.
+name: Demo estático
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    outputs:
+      activo: ${{ steps.pages.outputs.activo }}
+    steps:
+      - id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tipo="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type 2>/dev/null || true)"
+          if [ "$tipo" = "workflow" ]; then
+            echo "activo=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "activo=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Demo sin publicar::GitHub Pages no está activado con la fuente GitHub Actions (Settings -> Pages)."
+          fi
+
+  construir:
+    needs: revisar
+    if: needs.revisar.outputs.activo == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt httpx
+      - run: python scripts/build_static_demo.py dist
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4

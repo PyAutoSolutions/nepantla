@@ -1,0 +1,206 @@
+{
+  "format_version": 1,
+  "language": "es",
+  "clinical_review": "pendiente",
+  "notice": "FRASES SIN REVISIÓN CLÍNICA. Son un borrador de trabajo. Antes de usarlas con pacientes las debe revisar y firmar una persona de enfermería o medicina, y cada grabación la deben aprobar dos revisores.",
+  "sources": {
+    "nom-007": {
+      "title": "NOM-007-SSA2-2016, atención de la mujer durante el embarazo, parto y puerperio (numeral 5.3.1.3: signos y síntomas de urgencia obstétrica)",
+      "url": "https://www.gob.mx/cms/uploads/attachment/file/512098/NOM-007-SSA2-2016.pdf"
+    },
+    "imss-maternidad": {
+      "title": "IMSS, Maternidad: ¿cuándo debo acudir urgentemente al hospital? (signos de alarma en el embarazo)",
+      "url": "https://www.imss.gob.mx/_maternidad2/estas-embarazada/signos-alarma"
+    },
+    "ssaver-2024": {
+      "title": "Servicios de Salud de Veracruz: folleto «Signos de alarma en el embarazo» (2024)",
+      "url": "https://www.ssaver.gob.mx/proteccioncontrariesgossanitarios/wp-content/uploads/sites/10/2024/07/2024-SIGNOS-DE-ALARMA-EMBARAZO.pdf"
+    },
+    "nom-031": {
+      "title": "NOM-031-SSA2-1999, atención a la salud del niño (numerales 7.2.6.1.3 y 8.2.5.1.3.1: signos de alarma por diarrea y por infección respiratoria)",
+      "url": "https://platiica.economia.gob.mx/normalizacion/wp-content/uploads/sites/2/PDF_Normas_Publicas/031ssa2.pdf"
+    },
+    "ops-aiepi": {
+      "title": "OPS/OMS, AIEPI: signos generales de peligro en la niñez (ayudas de trabajo)",
+      "url": "https://paho.org/sites/default/files/IM-JobAids-2005-06spa.pdf"
+    },
+    "sspuebla-2025": {
+      "title": "Servicios de Salud del Estado de Puebla: material del Día del Niño y la Niña (signos de alarma por diarrea e infecciones respiratorias)",
+      "url": "https://ss.puebla.gob.mx/images/areas/informate/Dia%20del%20Ni%C3%B1o%20y%20la%20Ni%C3%B1a%202025.pdf"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "urgencias",
+      "prefix": "urg",
+      "title": "Urgencias",
+      "pictogram": "urgencias",
+      "notice": ""
+    },
+    {
+      "id": "embarazo",
+      "prefix": "emb",
+      "title": "Embarazo",
+      "pictogram": "embarazo",
+      "notice": "Las señales de alarma siguen la NOM-007-SSA2-2016 y listas públicas del IMSS y de secretarías de salud estatales. Falta la revisión clínica firmada.",
+      "sources": ["nom-007", "imss-maternidad", "ssaver-2024"]
+    },
+    {
+      "id": "nino",
+      "prefix": "nin",
+      "title": "Niño enfermo",
+      "pictogram": "nino",
+      "notice": "Los signos de alarma siguen la NOM-031-SSA2-1999, la estrategia AIEPI de la OPS y una lista pública de los Servicios de Salud de Puebla. Falta la revisión clínica firmada.",
+      "sources": ["nom-031", "ops-aiepi", "sspuebla-2025"]
+    },
+    {
+      "id": "medicinas",
+      "prefix": "med",
+      "title": "Medicinas",
+      "pictogram": "pastilla",
+      "notice": ""
+    },
+    {
+      "id": "consentimiento",
+      "prefix": "con",
+      "title": "Consentimiento",
+      "pictogram": "acuerdo",
+      "notice": "El consentimiento informado necesita intérprete. Estas frases apoyan la explicación; no la sustituyen."
+    },
+    {
+      "id": "alarma",
+      "prefix": "ala",
+      "title": "Señales de alarma",
+      "pictogram": "alarma",
+      "notice": "Indicaciones para cuándo regresar. Siguen normas oficiales y listas públicas del IMSS y de secretarías de salud estatales. Falta la revisión clínica firmada.",
+      "sources": ["nom-007", "nom-031", "imss-maternidad", "ssaver-2024", "sspuebla-2025"]
+    }
+  ],
+  "emergency": ["urg-001", "urg-002", "urg-003", "med-006", "emb-001"],
+  "system_phrases": [
+    {
+      "id": "greeting",
+      "scenario": "sistema",
+      "es_text": "Hola. Si me entiende bien, toque aquí.",
+      "answer_type": "none",
+      "pictogram": "saludo",
+      "priority": "normal"
+    }
+  ],
+  "options": {
+    "sintoma-dolor": { "es": "Dolor", "pictogram": "dolor" },
+    "sintoma-fiebre": { "es": "Fiebre", "pictogram": "fiebre" },
+    "sintoma-tos": { "es": "Tos", "pictogram": "tos" },
+    "sintoma-aire": { "es": "Falta de aire", "pictogram": "respirar" },
+    "sintoma-vomito": { "es": "Vómito", "pictogram": "vomito" },
+    "sintoma-diarrea": { "es": "Diarrea", "pictogram": "diarrea" },
+    "sintoma-herida": { "es": "Herida o golpe", "pictogram": "herida" },
+    "sintoma-mareo": { "es": "Mareo", "pictogram": "mareo" },
+    "edad-menos-2-meses": { "es": "Menos de 2 meses", "pictogram": "edad-recien-nacido" },
+    "edad-2-11-meses": { "es": "De 2 a 11 meses", "pictogram": "edad-bebe" },
+    "edad-1-4-anios": { "es": "De 1 a 4 años", "pictogram": "edad-nino-chico" },
+    "edad-5-o-mas": { "es": "5 años o más", "pictogram": "edad-nino-grande" },
+    "mes-1": { "es": "1 mes", "numeral": 1 },
+    "mes-2": { "es": "2 meses", "numeral": 2 },
+    "mes-3": { "es": "3 meses", "numeral": 3 },
+    "mes-4": { "es": "4 meses", "numeral": 4 },
+    "mes-5": { "es": "5 meses", "numeral": 5 },
+    "mes-6": { "es": "6 meses", "numeral": 6 },
+    "mes-7": { "es": "7 meses", "numeral": 7 },
+    "mes-8": { "es": "8 meses", "numeral": 8 },
+    "mes-9": { "es": "9 meses", "numeral": 9 }
+  },
+  "phrases": [
+    { "id": "urg-001", "scenario": "urgencias", "es_text": "¿Le falta el aire?", "answer_type": "yes_no", "pictogram": "respirar", "priority": "critica" },
+    { "id": "urg-002", "scenario": "urgencias", "es_text": "¿Le duele el pecho?", "answer_type": "yes_no", "pictogram": "pecho", "priority": "critica" },
+    { "id": "urg-003", "scenario": "urgencias", "es_text": "¿Tiene sangrado?", "answer_type": "yes_no", "pictogram": "sangre", "priority": "critica" },
+    { "id": "urg-004", "scenario": "urgencias", "es_text": "¿Qué le pasa?", "answer_type": "pictogram", "pictogram": "pregunta", "priority": "normal", "multiple": true,
+      "options": ["sintoma-dolor", "sintoma-fiebre", "sintoma-tos", "sintoma-aire", "sintoma-vomito", "sintoma-diarrea", "sintoma-herida", "sintoma-mareo"] },
+    { "id": "urg-005", "scenario": "urgencias", "es_text": "¿Dónde le duele?", "answer_type": "body_map", "pictogram": "dolor", "priority": "normal" },
+    { "id": "urg-006", "scenario": "urgencias", "es_text": "¿Cuánto le duele?", "answer_type": "pain_scale", "pictogram": "escala-dolor", "priority": "normal" },
+    { "id": "urg-007", "scenario": "urgencias", "es_text": "¿Desde cuándo se siente mal?", "answer_type": "duration", "pictogram": "calendario", "priority": "normal" },
+    { "id": "urg-008", "scenario": "urgencias", "es_text": "¿Se desmayó?", "answer_type": "yes_no", "pictogram": "desmayo", "priority": "critica" },
+    { "id": "urg-009", "scenario": "urgencias", "es_text": "¿Tuvo ataques (convulsiones)?", "answer_type": "yes_no", "pictogram": "convulsion", "priority": "critica" },
+    { "id": "urg-010", "scenario": "urgencias", "es_text": "¿Se golpeó la cabeza?", "answer_type": "yes_no", "pictogram": "golpe-cabeza", "priority": "normal" },
+    { "id": "urg-011", "scenario": "urgencias", "es_text": "¿Siente débil o dormido un lado del cuerpo?", "answer_type": "yes_no", "pictogram": "debilidad", "priority": "critica" },
+    { "id": "urg-012", "scenario": "urgencias", "es_text": "¿Ha vomitado?", "answer_type": "yes_no", "pictogram": "vomito", "priority": "normal" },
+    { "id": "urg-013", "scenario": "urgencias", "es_text": "¿Tiene fiebre?", "answer_type": "yes_no", "pictogram": "fiebre", "priority": "normal" },
+    { "id": "urg-014", "scenario": "urgencias", "es_text": "¿Se cayó o tuvo un accidente?", "answer_type": "yes_no", "pictogram": "caida", "priority": "normal" },
+    { "id": "urg-015", "scenario": "urgencias", "es_text": "¿Le picó o le mordió un animal?", "answer_type": "yes_no", "pictogram": "animal", "priority": "normal" },
+    { "id": "urg-016", "scenario": "urgencias", "es_text": "¿Tiene diabetes (azúcar alta en la sangre)?", "answer_type": "yes_no", "pictogram": "diabetes", "priority": "normal" },
+    { "id": "urg-017", "scenario": "urgencias", "es_text": "¿Tiene la presión alta?", "answer_type": "yes_no", "pictogram": "presion", "priority": "normal" },
+
+    { "id": "emb-001", "scenario": "embarazo", "es_text": "¿Está embarazada?", "answer_type": "yes_no", "pictogram": "embarazo", "priority": "critica" },
+    { "id": "emb-002", "scenario": "embarazo", "es_text": "¿Cuántos meses tiene de embarazo?", "answer_type": "pictogram", "pictogram": "meses", "priority": "normal",
+      "options": ["mes-1", "mes-2", "mes-3", "mes-4", "mes-5", "mes-6", "mes-7", "mes-8", "mes-9"] },
+    { "id": "emb-003", "scenario": "embarazo", "es_text": "¿Ha tenido sangrado por la vagina?", "answer_type": "yes_no", "pictogram": "sangre", "priority": "critica" },
+    { "id": "emb-004", "scenario": "embarazo", "es_text": "¿Siente menos movimientos del bebé?", "answer_type": "yes_no", "pictogram": "bebe-movimiento", "priority": "critica" },
+    { "id": "emb-005", "scenario": "embarazo", "es_text": "¿Le ha salido líquido por la vagina?", "answer_type": "yes_no", "pictogram": "liquido", "priority": "critica" },
+    { "id": "emb-006", "scenario": "embarazo", "es_text": "¿Tiene dolor de cabeza fuerte?", "answer_type": "yes_no", "pictogram": "dolor-cabeza", "priority": "critica" },
+    { "id": "emb-007", "scenario": "embarazo", "es_text": "¿Ve borroso o ve lucecitas?", "answer_type": "yes_no", "pictogram": "vision", "priority": "critica" },
+    { "id": "emb-008", "scenario": "embarazo", "es_text": "¿Le zumban los oídos?", "answer_type": "yes_no", "pictogram": "oido", "priority": "critica" },
+    { "id": "emb-009", "scenario": "embarazo", "es_text": "¿Se le han hinchado la cara, las manos o los pies?", "answer_type": "yes_no", "pictogram": "hinchazon", "priority": "critica" },
+    { "id": "emb-010", "scenario": "embarazo", "es_text": "¿Tiene dolor fuerte en la boca del estómago?", "answer_type": "yes_no", "pictogram": "dolor-estomago", "priority": "critica" },
+    { "id": "emb-011", "scenario": "embarazo", "es_text": "¿Tiene dolores de parto?", "answer_type": "yes_no", "pictogram": "parto", "priority": "critica" },
+    { "id": "emb-012", "scenario": "embarazo", "es_text": "¿Ha tenido fiebre?", "answer_type": "yes_no", "pictogram": "fiebre", "priority": "normal" },
+    { "id": "emb-013", "scenario": "embarazo", "es_text": "¿Le arde o le duele al orinar?", "answer_type": "yes_no", "pictogram": "orinar", "priority": "normal" },
+    { "id": "emb-014", "scenario": "embarazo", "es_text": "¿Ha ido a sus consultas de embarazo?", "answer_type": "yes_no", "pictogram": "consulta", "priority": "normal" },
+
+    { "id": "nin-001", "scenario": "nino", "es_text": "¿Qué edad tiene el niño?", "answer_type": "pictogram", "pictogram": "nino", "priority": "normal",
+      "options": ["edad-menos-2-meses", "edad-2-11-meses", "edad-1-4-anios", "edad-5-o-mas"] },
+    { "id": "nin-002", "scenario": "nino", "es_text": "¿Desde cuándo está enfermo el niño?", "answer_type": "duration", "pictogram": "calendario", "priority": "normal" },
+    { "id": "nin-003", "scenario": "nino", "es_text": "¿El niño puede tomar líquidos o tomar pecho?", "answer_type": "yes_no", "pictogram": "beber", "priority": "critica" },
+    { "id": "nin-004", "scenario": "nino", "es_text": "¿El niño vomita todo lo que come o toma?", "answer_type": "yes_no", "pictogram": "vomito", "priority": "critica" },
+    { "id": "nin-005", "scenario": "nino", "es_text": "¿Su hijo tiene fiebre?", "answer_type": "yes_no", "pictogram": "fiebre", "priority": "normal" },
+    { "id": "nin-006", "scenario": "nino", "es_text": "¿El niño ha tenido ataques (convulsiones)?", "answer_type": "yes_no", "pictogram": "convulsion", "priority": "critica" },
+    { "id": "nin-007", "scenario": "nino", "es_text": "¿El niño está muy dormido o le cuesta despertar?", "answer_type": "yes_no", "pictogram": "dormido", "priority": "critica" },
+    { "id": "nin-008", "scenario": "nino", "es_text": "¿El niño tiene tos?", "answer_type": "yes_no", "pictogram": "tos", "priority": "normal" },
+    { "id": "nin-009", "scenario": "nino", "es_text": "¿El niño respira rápido o con dificultad?", "answer_type": "yes_no", "pictogram": "respirar", "priority": "critica" },
+    { "id": "nin-010", "scenario": "nino", "es_text": "¿El niño tiene diarrea?", "answer_type": "yes_no", "pictogram": "diarrea", "priority": "normal" },
+    { "id": "nin-011", "scenario": "nino", "es_text": "¿Hay sangre en el excremento del niño?", "answer_type": "yes_no", "pictogram": "sangre-excremento", "priority": "critica" },
+    { "id": "nin-012", "scenario": "nino", "es_text": "¿El niño ha orinado hoy?", "answer_type": "yes_no", "pictogram": "orinar", "priority": "normal" },
+    { "id": "nin-013", "scenario": "nino", "es_text": "¿Dónde le duele al niño?", "answer_type": "body_map", "pictogram": "dolor", "priority": "normal" },
+    { "id": "nin-014", "scenario": "nino", "es_text": "¿Trae la cartilla de vacunación del niño?", "answer_type": "yes_no", "pictogram": "cartilla", "priority": "normal" },
+
+    { "id": "med-001", "scenario": "medicinas", "es_text": "¿Toma alguna medicina todos los días?", "answer_type": "yes_no", "pictogram": "pastilla", "priority": "normal" },
+    { "id": "med-002", "scenario": "medicinas", "es_text": "¿Trae sus medicinas con usted?", "answer_type": "yes_no", "pictogram": "frasco", "priority": "normal" },
+    { "id": "med-003", "scenario": "medicinas", "es_text": "¿Ya tomó su medicina hoy?", "answer_type": "yes_no", "pictogram": "medicina-hoy", "priority": "normal" },
+    { "id": "med-004", "scenario": "medicinas", "es_text": "¿Usa plantas o remedios de su comunidad?", "answer_type": "yes_no", "pictogram": "planta", "priority": "normal" },
+    { "id": "med-005", "scenario": "medicinas", "es_text": "¿Alguna medicina le ha caído mal?", "answer_type": "yes_no", "pictogram": "medicina-mal", "priority": "normal" },
+    { "id": "med-006", "scenario": "medicinas", "es_text": "¿Es alérgico a alguna medicina?", "answer_type": "yes_no", "pictogram": "alergia", "priority": "critica" },
+    { "id": "med-007", "scenario": "medicinas", "es_text": "Tome esta medicina una vez al día.", "answer_type": "none", "pictogram": "una-vez", "priority": "normal" },
+    { "id": "med-008", "scenario": "medicinas", "es_text": "Tome esta medicina dos veces al día: en la mañana y en la noche.", "answer_type": "none", "pictogram": "dos-veces", "priority": "normal" },
+    { "id": "med-009", "scenario": "medicinas", "es_text": "Tome esta medicina tres veces al día.", "answer_type": "none", "pictogram": "tres-veces", "priority": "normal" },
+    { "id": "med-010", "scenario": "medicinas", "es_text": "Tome esta medicina con comida.", "answer_type": "none", "pictogram": "con-comida", "priority": "normal" },
+    { "id": "med-011", "scenario": "medicinas", "es_text": "Tome la medicina todos los días, aunque ya se sienta bien.", "answer_type": "none", "pictogram": "todos-los-dias", "priority": "normal" },
+    { "id": "med-012", "scenario": "medicinas", "es_text": "No tome alcohol mientras toma esta medicina.", "answer_type": "none", "pictogram": "no-alcohol", "priority": "normal" },
+    { "id": "med-013", "scenario": "medicinas", "es_text": "¿Entendió cómo tomar su medicina?", "answer_type": "yes_no", "pictogram": "pregunta", "priority": "critica" },
+
+    { "id": "con-001", "scenario": "consentimiento", "es_text": "Le voy a explicar lo que vamos a hacer.", "answer_type": "none", "pictogram": "explicar", "priority": "normal" },
+    { "id": "con-002", "scenario": "consentimiento", "es_text": "Necesitamos revisarle el cuerpo.", "answer_type": "none", "pictogram": "revisar", "priority": "normal" },
+    { "id": "con-003", "scenario": "consentimiento", "es_text": "Le vamos a sacar un poco de sangre para analizarla.", "answer_type": "none", "pictogram": "muestra-sangre", "priority": "normal" },
+    { "id": "con-004", "scenario": "consentimiento", "es_text": "Le vamos a poner una inyección.", "answer_type": "none", "pictogram": "inyeccion", "priority": "normal" },
+    { "id": "con-005", "scenario": "consentimiento", "es_text": "Le vamos a poner suero en el brazo.", "answer_type": "none", "pictogram": "suero", "priority": "normal" },
+    { "id": "con-006", "scenario": "consentimiento", "es_text": "Le vamos a tomar una radiografía: una imagen del interior del cuerpo.", "answer_type": "none", "pictogram": "radiografia", "priority": "normal" },
+    { "id": "con-007", "scenario": "consentimiento", "es_text": "¿Entendió lo que le vamos a hacer?", "answer_type": "yes_no", "pictogram": "pregunta", "priority": "critica" },
+    { "id": "con-008", "scenario": "consentimiento", "es_text": "¿Está de acuerdo?", "answer_type": "yes_no", "pictogram": "acuerdo", "priority": "critica" },
+    { "id": "con-009", "scenario": "consentimiento", "es_text": "¿Tiene alguna pregunta?", "answer_type": "yes_no", "pictogram": "duda", "priority": "normal" },
+    { "id": "con-010", "scenario": "consentimiento", "es_text": "¿Quiere que un familiar esté con usted?", "answer_type": "yes_no", "pictogram": "familia", "priority": "normal" },
+    { "id": "con-011", "scenario": "consentimiento", "es_text": "Usted puede decir que no.", "answer_type": "none", "pictogram": "decir-no", "priority": "critica" },
+    { "id": "con-012", "scenario": "consentimiento", "es_text": "¿Quiere que le ayude un intérprete?", "answer_type": "yes_no", "pictogram": "interprete", "priority": "critica" },
+    { "id": "con-013", "scenario": "consentimiento", "es_text": "Necesita quedarse en el hospital.", "answer_type": "none", "pictogram": "hospital", "priority": "normal" },
+
+    { "id": "ala-001", "scenario": "alarma", "es_text": "Regrese de inmediato si le falta el aire.", "answer_type": "none", "pictogram": "respirar", "priority": "critica" },
+    { "id": "ala-002", "scenario": "alarma", "es_text": "Regrese de inmediato si tiene sangrado.", "answer_type": "none", "pictogram": "sangre", "priority": "critica" },
+    { "id": "ala-003", "scenario": "alarma", "es_text": "Regrese de inmediato si la fiebre no se le quita.", "answer_type": "none", "pictogram": "fiebre", "priority": "normal" },
+    { "id": "ala-004", "scenario": "alarma", "es_text": "Regrese de inmediato si el dolor se pone más fuerte.", "answer_type": "none", "pictogram": "dolor", "priority": "normal" },
+    { "id": "ala-005", "scenario": "alarma", "es_text": "Regrese de inmediato si vomita todo lo que come o toma.", "answer_type": "none", "pictogram": "vomito", "priority": "normal" },
+    { "id": "ala-006", "scenario": "alarma", "es_text": "Regrese de inmediato si se desmaya o tiene ataques (convulsiones).", "answer_type": "none", "pictogram": "convulsion", "priority": "critica" },
+    { "id": "ala-007", "scenario": "alarma", "es_text": "Regrese de inmediato si siente menos movimientos del bebé.", "answer_type": "none", "pictogram": "bebe-movimiento", "priority": "critica" },
+    { "id": "ala-008", "scenario": "alarma", "es_text": "Si le pasa esto, regrese de inmediato.", "answer_type": "none", "pictogram": "regresar", "priority": "critica" },
+    { "id": "ala-009", "scenario": "alarma", "es_text": "Regrese de inmediato si el niño no puede tomar líquidos o pecho.", "answer_type": "none", "pictogram": "beber", "priority": "critica" },
+    { "id": "ala-010", "scenario": "alarma", "es_text": "Regrese de inmediato si el niño está muy dormido o le cuesta despertar.", "answer_type": "none", "pictogram": "dormido", "priority": "critica" },
+    { "id": "ala-011", "scenario": "alarma", "es_text": "Regrese a consulta el día que le indicamos.", "answer_type": "none", "pictogram": "cita", "priority": "normal" },
+    { "id": "ala-012", "scenario": "alarma", "es_text": "¿Entendió cuándo debe regresar?", "answer_type": "yes_no", "pictogram": "pregunta", "priority": "critica" }
+  ]
+}

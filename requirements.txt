@@ -1,0 +1,5 @@
+# Lo necesario para correr el servidor (versiones con las que se probó).
+fastapi==0.162.5
+uvicorn==0.54.0
+pydantic==2.13.5
+python-multipart==0.0.32

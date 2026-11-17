@@ -1,0 +1,9 @@
+# Lo necesario para correr las pruebas.
+-r requirements.txt
+pytest==9.1.1
+httpx==0.28.1
+# Pruebas en navegador (e2e/). Después: `playwright install chromium`.
+playwright==1.63.0
+# Para leer el código QR de la tarjeta en las pruebas.
+pillow==12.3.0
+zxing-cpp==3.1.1

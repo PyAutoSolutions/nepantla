@@ -1,0 +1,856 @@
+{
+  "format_version": 1,
+  "pack_id": "prueba-a-001",
+  "language": "AUDIO DE PRUEBA (no es una lengua real)",
+  "variant": "Tonos agudos (prueba A)",
+  "community": "Ninguna: es un paquete de demostración",
+  "version": "0.1.0",
+  "status": "draft",
+  "license": "CC0 1.0: tonos generados por computadora, sin voz humana",
+  "community_label": null,
+  "guardians": [
+    "Equipo de pruebas de Nepantla"
+  ],
+  "is_test": true,
+  "greeting": {
+    "audio": "greeting.opus",
+    "reviewed_by": [
+      "Revisor de prueba 1",
+      "Revisor de prueba 2"
+    ],
+    "recorded_by": "Generador de tonos (no es una voz)",
+    "approved_at": "2026-11-13"
+  },
+  "phrases": [
+    {
+      "id": "urg-001",
+      "audio": "audio/urg-001.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-002",
+      "audio": "audio/urg-002.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-003",
+      "audio": "audio/urg-003.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-004",
+      "audio": "audio/urg-004.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-005",
+      "audio": "audio/urg-005.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-006",
+      "audio": "audio/urg-006.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-007",
+      "audio": "audio/urg-007.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-008",
+      "audio": "audio/urg-008.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-009",
+      "audio": "audio/urg-009.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-010",
+      "audio": "audio/urg-010.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-011",
+      "audio": "audio/urg-011.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-012",
+      "audio": "audio/urg-012.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-013",
+      "audio": "audio/urg-013.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-014",
+      "audio": "audio/urg-014.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-015",
+      "audio": "audio/urg-015.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-016",
+      "audio": "audio/urg-016.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "urg-017",
+      "audio": "audio/urg-017.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-001",
+      "audio": "audio/emb-001.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-002",
+      "audio": "audio/emb-002.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-003",
+      "audio": "audio/emb-003.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-004",
+      "audio": "audio/emb-004.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-005",
+      "audio": "audio/emb-005.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-006",
+      "audio": "audio/emb-006.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-007",
+      "audio": "audio/emb-007.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-008",
+      "audio": "audio/emb-008.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-009",
+      "audio": "audio/emb-009.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-010",
+      "audio": "audio/emb-010.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-011",
+      "audio": "audio/emb-011.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-012",
+      "audio": "audio/emb-012.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-013",
+      "audio": "audio/emb-013.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "emb-014",
+      "audio": "audio/emb-014.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-001",
+      "audio": "audio/nin-001.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-002",
+      "audio": "audio/nin-002.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-003",
+      "audio": "audio/nin-003.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-004",
+      "audio": "audio/nin-004.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-005",
+      "audio": "audio/nin-005.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-006",
+      "audio": "audio/nin-006.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-007",
+      "audio": "audio/nin-007.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-008",
+      "audio": "audio/nin-008.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-009",
+      "audio": "audio/nin-009.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-010",
+      "audio": "audio/nin-010.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-011",
+      "audio": "audio/nin-011.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-012",
+      "audio": "audio/nin-012.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-013",
+      "audio": "audio/nin-013.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "nin-014",
+      "audio": "audio/nin-014.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-001",
+      "audio": "audio/med-001.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-002",
+      "audio": "audio/med-002.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-003",
+      "audio": "audio/med-003.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-004",
+      "audio": "audio/med-004.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-005",
+      "audio": "audio/med-005.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-006",
+      "audio": "audio/med-006.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-007",
+      "audio": "audio/med-007.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-008",
+      "audio": "audio/med-008.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-009",
+      "audio": "audio/med-009.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-010",
+      "audio": "audio/med-010.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-011",
+      "audio": "audio/med-011.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-012",
+      "audio": "audio/med-012.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "med-013",
+      "audio": "audio/med-013.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-001",
+      "audio": "audio/con-001.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-002",
+      "audio": "audio/con-002.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-003",
+      "audio": "audio/con-003.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-004",
+      "audio": "audio/con-004.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-005",
+      "audio": "audio/con-005.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-006",
+      "audio": "audio/con-006.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-007",
+      "audio": "audio/con-007.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-008",
+      "audio": "audio/con-008.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-009",
+      "audio": "audio/con-009.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-010",
+      "audio": "audio/con-010.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-011",
+      "audio": "audio/con-011.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-012",
+      "audio": "audio/con-012.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "con-013",
+      "audio": "audio/con-013.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-001",
+      "audio": "audio/ala-001.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-002",
+      "audio": "audio/ala-002.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-003",
+      "audio": "audio/ala-003.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-004",
+      "audio": "audio/ala-004.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-005",
+      "audio": "audio/ala-005.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-006",
+      "audio": "audio/ala-006.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-007",
+      "audio": "audio/ala-007.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-008",
+      "audio": "audio/ala-008.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-009",
+      "audio": "audio/ala-009.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-010",
+      "audio": "audio/ala-010.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-011",
+      "audio": "audio/ala-011.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    },
+    {
+      "id": "ala-012",
+      "audio": "audio/ala-012.opus",
+      "reviewed_by": [
+        "Revisor de prueba 1",
+        "Revisor de prueba 2"
+      ],
+      "recorded_by": "Generador de tonos (no es una voz)",
+      "approved_at": "2026-11-13"
+    }
+  ]
+}

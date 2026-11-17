@@ -1,0 +1,7 @@
+# Archivos de texto siempre con saltos de línea LF, también en Windows.
+* text=auto eol=lf
+
+# Binarios: git no los modifica.
+*.opus  binary
+*.png   binary
+*.woff2 binary

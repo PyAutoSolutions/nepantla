@@ -1,0 +1,8 @@
+AUDIO DE PRUEBA
+
+Estos archivos son tonos generados por computadora con
+scripts/make_test_packs.py. No contienen voz humana ni representan a
+ninguna lengua, comunidad o persona.
+
+Se entregan al dominio público (CC0 1.0 Universal):
+https://creativecommons.org/publicdomain/zero/1.0/deed.es

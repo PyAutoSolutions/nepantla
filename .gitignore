@@ -1,0 +1,24 @@
+# Datos locales: base SQLite, audios grabados y respaldos. Nunca al repositorio.
+/data/
+*.db
+*.db-wal
+*.db-shm
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Secretos
+.env
+
+# Sistema y editores
+.DS_Store
+.idea/
+.vscode/
+*.zip
+
+# Demostración estática generada
+/dist/

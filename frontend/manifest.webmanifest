@@ -1,0 +1,24 @@
+{
+  "name": "Nepantla",
+  "short_name": "Nepantla",
+  "description": "Ayuda de comunicación sin internet entre personas que hablan una lengua indígena de México y el personal de salud.",
+  "lang": "es-MX",
+  "dir": "ltr",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1f2a6b",
+  "theme_color": "#1f2a6b",
+  "categories": ["medical", "health"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Emergencia", "url": "./#/emergencia", "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Pedir intérprete", "url": "./#/interprete", "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" }] }
+  ]
+}

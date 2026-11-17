@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nepantla</title>
+  <meta name="description" content="Ayuda de comunicación sin internet entre personas que hablan una lengua indígena de México y el personal de salud. Solo audios grabados y revisados por hablantes.">
+  <meta name="theme-color" content="#1f2a6b">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="preload" href="./fonts/atkinson-hyperlegible-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="modulepreload" href="./js/config.js">
+  <link rel="modulepreload" href="./js/core.js">
+  <link rel="modulepreload" href="./js/dom.js">
+  <link rel="modulepreload" href="./js/store.js">
+  <link rel="modulepreload" href="./js/net.js">
+  <link rel="modulepreload" href="./js/audio.js">
+  <link rel="modulepreload" href="./js/bodymap.js">
+  <link rel="modulepreload" href="./js/views-consult.js">
+  <link rel="modulepreload" href="./js/views-packs.js">
+  <link rel="modulepreload" href="./vendor/qrcode.js">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div class="app" id="app" data-vista="inicio">
+    <div id="cintas"></div>
+    <header class="tope no-imprimir" id="tope" hidden></header>
+    <main id="contenido" tabindex="-1">
+      <div class="pagina">
+        <h1>Nepantla</h1>
+        <p>Abriendo la app…</p>
+        <noscript>
+          <p>Nepantla necesita JavaScript para funcionar. Actívelo en su navegador y vuelva a abrir la página.</p>
+        </noscript>
+      </div>
+    </main>
+    <nav class="barra no-imprimir" id="barra" aria-label="Siempre a la mano">
+      <a class="btn btn-rojo" href="#/emergencia">
+        <svg class="ic" aria-hidden="true" focusable="false"><use href="#emergencia"></use></svg>
+        <span>Emergencia</span>
+      </a>
+      <a class="btn btn-maiz" href="#/interprete">
+        <svg class="ic" aria-hidden="true" focusable="false"><use href="#interprete"></use></svg>
+        <span>Pedir intérprete</span>
+      </a>
+    </nav>
+  </div>
+  <div id="flotantes"></div>
+</body>
+</html>

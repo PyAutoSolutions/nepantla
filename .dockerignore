@@ -1,0 +1,13 @@
+.git
+.pytest_cache
+**/__pycache__
+data
+e2e
+tests_js
+docs
+scripts
+backend/tests
+*.md
+*.zip
+dist
+.github

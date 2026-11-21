@@ -4,8 +4,9 @@ Este archivo existe para poder retomar el trabajo sin repetir nada si una
 sesión se corta. Se actualiza al cerrar cada bloque. **No sustituye a
 revisar los archivos**: antes de continuar, corre las pruebas de la sección 5.
 
-Última actualización: 16 de noviembre de 2026. **Software terminado y empaquetado
-(versión 0.1.0). Falta publicarlo: lo detiene GitHub (sección 11).**
+Última actualización: 16 de noviembre de 2026 (noche). **Versión 0.1.0
+terminada, en GitHub y desplegada en Railway en modo demostración
+(sección 11).**
 
 ## 1. Objetivo
 
@@ -95,12 +96,11 @@ copia extraída del ZIP de entrega.
       contraste AAA en el texto principal, nombres accesibles y un solo
       título por pantalla, botones de 56 px o más en modo paciente.
 - [x] Empaquetado en `nepantla.zip`.
-- [ ] **Lighthouse no se corrió.** Se intentó dos veces (15 nov con `npx`,
-      16 nov con `npm install`) y las dos veces el sistema de permisos del
-      entorno de trabajo bloqueó instalar y ejecutar la herramienta. No hay
-      resultados de Lighthouse; las mediciones de arriba son pruebas propias,
-      no un informe de Lighthouse. Se corre en un minuto desde Chrome
-      (F12 → pestaña Lighthouse) o con `npx lighthouse http://localhost:8000 --view`.
+- [x] **Lighthouse 13.6.0** sobre el demo desplegado, vía PageSpeed Insights
+      (móvil, Moto G Power emulado, 4G lenta, 16 nov 2026): rendimiento 99,
+      accesibilidad 96, buenas prácticas 100, SEO 60. Instalarlo en el
+      entorno de trabajo no se permitió (15 y 16 nov), por eso se corrió en
+      el servicio de Google contra la liga pública. Detalle en la sección 11.
 
 ### Contra «Cuándo está terminado el MVP»
 
@@ -110,15 +110,16 @@ copia extraída del ZIP de entrega.
 | 6 escenarios con ~80 frases en español, con pictogramas | Cumplido (83 frases, 124 pictogramas) |
 | Al menos un idioma con todas las frases grabadas y doblemente revisadas | **Pendiente: necesita personas reales** |
 | Ficha pública, botón de reportar y retiro de voces | Cumplido y probado |
-| Pruebas pasando y Lighthouse sin errores graves | Pruebas: 162 en verde. Lighthouse: sin correr |
+| Pruebas pasando y Lighthouse sin errores graves | Pruebas: 162 en verde. Lighthouse: 99 / 96 / 100 / 60, sin errores graves |
 | Prueba piloto con personal de salud y un hablante | **Pendiente: necesita personas reales** |
 
 ### Siguiente acción concreta
 
-1. Subir el repositorio a GitHub.
-2. Desplegar en Railway en modo demostración (pasos en `README.md`).
-3. Correr Lighthouse y probar en dos teléfonos reales.
-4. Empezar por `docs/PENDIENTES.md`: revisión clínica y primer acuerdo con una comunidad.
+1. Probar el demo en dos teléfonos reales (un Android de gama baja y un
+   iPhone) y recorrerlo con TalkBack.
+2. Con esa prueba, decidir el arreglo de la barra fija (sección 11).
+3. Empezar por `docs/PENDIENTES.md`: revisión clínica y primer acuerdo con
+   una comunidad.
 
 ## 8. Fuentes consultadas (ya están citadas en `phrases.es.json`)
 
@@ -144,40 +145,71 @@ consentimiento (`frontend/audio/consentimiento.es.opus`).
 - El registro de accesos de Railway (su proxy) queda fuera del código: hay
   que revisarlo al desplegar (ver `docs/PRIVACY.md`).
 
-## 11. Publicación: estado real comprobado el 16 nov 2026
+## 11. Publicación: estado real comprobado el 16 nov 2026 (noche)
 
-### GitHub: no se subió
+### GitHub: hecho
 
-- Cuenta: `PyAutoSolutions`, con dos repositorios públicos (`rainshield` y
-  `BecaRadar_Mexico`). **No existe ningún repositorio `nepantla`.**
-- Por qué: el conector de GitHub de la sesión rechaza crear repositorios
-  (`403 Resource not accessible by integration`, comprobado el 15 y el 16 de
-  noviembre), solo acepta archivos de texto (no fuentes, iconos ni audios) y
-  la sesión no tiene la cuenta enlazada para hacer `git push`
-  («no GitHub account linked»).
-- Qué falta: crear el repositorio y subir el contenido del ZIP (comandos en
-  `README.md`). Alternativa: enlazar GitHub en la configuración de Claude y
-  crear el repositorio vacío, para que una sesión pueda hacer el `push`.
+- Repositorio `PyAutoSolutions/nepantla`, rama `main`, commit `b3c4db4`
+  («Nepantla: MVP»). Lo subió Gabriel desde su teléfono con el ZIP de 194
+  archivos: el conector de GitHub de la sesión no podía crear repositorios
+  (error 403).
+- La sesión de trabajo no puede leer ese repositorio, así que no se comparó
+  archivo por archivo. Sí se comprobó lo que Railway construyó desde él: el
+  identificador de los archivos de la app (`build` en `/api/health`) es
+  `35e69ec22a51`, igual al de la versión probada.
+- La llave de despliegue temporal que se usó para subirlo debe borrarse.
 
-### Railway: preparado, sin despliegue
+### Railway: desplegado en modo demostración
 
-- Proyecto `nepantla` (`471f38a4-24e3-42e1-a6c9-daecd72a0987`), entorno
-  `production` (`c5c37bba-d1ec-49a8-aa6a-f98d2b140d53`), servicio
-  `nepantla-demo` (`e187d0d7-e353-4e11-992a-8b6a94df2cff`).
-- Estado comprobado: servicio **apagado**, **0 despliegues**, **sin dominio**.
-  Variables puestas: `NEPANTLA_DEV_MODE`, `NEPANTLA_FORCE_HTTPS`,
-  `NEPANTLA_DATA_DIR`. Volumen `nepantla-datos` montado en `/data`.
-- Sin token de administración a propósito: el estudio de grabación queda
-  apagado en un demo público.
+- Liga: https://nepantla-demo-production.up.railway.app
+- Proyecto `nepantla`, servicio `nepantla-demo`, despliegue
+  `98e0716a-7a36-4f71-bc47-d8ba95f75c4b`: SUCCESS, región `sfo`. Se vuelve a
+  desplegar solo con cada `push` a `main`.
+- Variables `NEPANTLA_DEV_MODE=1`, `NEPANTLA_FORCE_HTTPS=1` y
+  `NEPANTLA_DATA_DIR=/data`; volumen `nepantla-datos` (500 MB) en `/data`.
+  Sin token de administración: el estudio queda apagado.
 - No se contrató nada ni se cambió de plan.
-- Qué falta: conectar el repositorio al servicio y generar el dominio. Solo
-  se puede cuando el código esté en GitHub.
-- Ensayo en local de lo que hará el contenedor (16 nov): instalación limpia
-  solo con `requirements.txt`, arranque con el mismo comando y las mismas
-  variables. Resultado: `/api/health` responde 200 sin encabezados de proxy
-  (así lo revisa Railway), `http` redirige a `https` (308), llegan CSP y HSTS,
-  no hay cookies, salen los 2 paquetes de prueba y sus audios, y los datos
-  siguen ahí después de reiniciar. Esto no sustituye al despliegue real.
+
+Comprobado en la liga pública:
+
+- `/api/health` responde
+  `{"ok":true,"dev_mode":true,"build":"35e69ec22a51","studio":false,"ffmpeg":true}`.
+- El inicio carga con la cinta de modo demostración y salen los dos paquetes
+  de prueba.
+- Guardar el paquete de prueba A desde un navegador real terminó en
+  «Guardado en este teléfono»: la app y el servidor se comunican (manifiesto
+  y 84 audios).
+- Registro HTTP de Railway: ninguna respuesta de error de la app. El único
+  404 fue `/robots.txt`, que no existe.
+- Registro de arranque: volumen montado y Uvicorn en marcha, sin errores.
+- No comprobado en la liga: el modo sin conexión. Lo prueba la suite de
+  navegador en local.
+
+### Lighthouse
+
+Lighthouse 13.6.0 vía PageSpeed Insights (móvil, Moto G Power emulado, 4G
+lenta), sobre la liga pública:
+
+| Categoría | Puntos |
+|---|---|
+| Rendimiento | 99 (FCP 0.8 s, LCP 1.4 s, TBT 0 ms, CLS 0.062) |
+| Accesibilidad | 96 |
+| Buenas prácticas | 100 |
+| SEO | 60 |
+
+- SEO 60 es a propósito: `index.html` pide no aparecer en buscadores
+  (`noindex`), porque es una demostración con audio de prueba.
+- Accesibilidad 96: el único hallazgo es «Touch targets do not have
+  sufficient size or spacing». Los botones miden 56 px o más; el problema es
+  que la barra fija de «Emergencia» y «Pedir intérprete» queda encima de los
+  últimos enlaces del inicio («Acerca de y créditos», «Ajustes de esta
+  clínica») hasta que se desplaza la pantalla.
+- Arreglo propuesto, sin aplicar: que solo se desplace el contenido y la
+  barra quede fuera (`.app` con altura `100dvh` y `main` con su propio
+  desplazamiento, solo donde el navegador entienda `dvh`), volver arriba al
+  cambiar de pantalla y quitar esa altura al imprimir. No se aplicó porque
+  cambia cómo se desplaza toda la app y debe probarse antes en teléfonos
+  reales.
 
 ### Demostración sin servidor
 
@@ -211,17 +243,19 @@ consentimiento (`frontend/audio/consentimiento.es.opus`).
 correos. Las 162 pruebas se corrieron desde una copia extraída del ZIP; tras
 los últimos cambios (flujo de Pages, `.gitattributes` y documentación, sin
 tocar código) se repitieron las 138 del servidor.
+Desde el 16 nov, la copia de referencia es el repositorio de GitHub.
 
 ### Lo que necesita a una persona
 
-1. Subir el código a GitHub.
-2. Conectar el repositorio en Railway y generar el dominio.
-3. Correr Lighthouse y probar en dos teléfonos reales.
-4. La validación humana de `docs/PENDIENTES.md`: revisión clínica de las 83
+1. Borrar la llave de despliegue temporal: en GitHub (Settings → Deploy
+   keys) y en el teléfono donde se creó.
+2. Probar el demo en dos teléfonos reales (un Android de gama baja y un
+   iPhone) y recorrerlo con TalkBack.
+3. La validación humana de `docs/PENDIENTES.md`: revisión clínica de las 83
    frases, hablantes e intérpretes, acuerdo con una comunidad y sus
    guardianes, revisión legal, prueba piloto y el audio humano del
    consentimiento.
 
 **Nepantla no está listo para usarse con pacientes** hasta completar el
-punto 4. Los audios incluidos son tonos de prueba, no grabaciones en ninguna
+punto 3. Los audios incluidos son tonos de prueba, no grabaciones en ninguna
 lengua.

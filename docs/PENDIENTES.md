@@ -30,8 +30,11 @@ esto se puede inventar.
       revisión, publicado por sus guardianes.
 - [ ] **Prueba piloto** con personal de salud y un hablante, con notas.
 - [ ] **Probar en teléfonos reales**: un Android de gama baja y un iPhone.
-- [ ] **Lighthouse y TalkBack**: correr `npx lighthouse http://localhost:8000 --view`
-      y recorrer la app con el lector de pantalla de Android.
+- [x] **Lighthouse** (16 nov 2026, PageSpeed Insights, móvil): rendimiento
+      99, accesibilidad 96, buenas prácticas 100, SEO 60 (`noindex` a
+      propósito). Falta decidir el arreglo de la barra fija que tapa los
+      últimos enlaces del inicio (ver `PROJECT_PROGRESS.md`, sección 11).
+- [ ] **TalkBack**: recorrer la app con el lector de pantalla de Android.
 
 ## Para la prueba piloto (plantilla de notas)
 
@@ -48,13 +51,13 @@ Anotar sin nombres de pacientes:
 Mientras esas notas no existan, no se debe afirmar que la herramienta
 «funciona» ni dar cifras de impacto.
 
-## Pasos de publicación (necesitan tus cuentas)
+## Pasos de publicación
 
-- [ ] **Subir el repositorio a GitHub.** Los comandos están en `README.md`.
-- [ ] **Railway:** el proyecto `nepantla` y el servicio `nepantla-demo` ya
-      están creados, con volumen y variables. Falta conectar el repositorio
-      y generar el dominio (pasos en `README.md`).
-- [ ] **Demo gratis en GitHub Pages:** hacer público el repositorio y activar
-      *Settings → Pages → Source: GitHub Actions*.
+- [x] Código en GitHub: `PyAutoSolutions/nepantla`.
+- [x] Demo en Railway: https://nepantla-demo-production.up.railway.app
+- [ ] Borrar la llave de despliegue temporal que se usó para subir el código
+      (GitHub → Settings → Deploy keys).
+- [ ] **Demo gratis en GitHub Pages** (opcional): hacer público el
+      repositorio y activar *Settings → Pages → Source: GitHub Actions*.
 - [ ] Grabar un video corto del demo. Debe verse la cinta amarilla de
       «AUDIO DE PRUEBA» en todo momento.

@@ -17,6 +17,8 @@ personas intérpretes: el botón «Pedir intérprete» está en todas las pantal
 | | |
 |---|---|
 | Software | Completo y probado (162 pruebas automáticas) |
+| Demo en vivo | https://nepantla-demo-production.up.railway.app (solo audio de prueba) |
+| Lighthouse (móvil) | Rendimiento 99 · Accesibilidad 96 · Buenas prácticas 100 · SEO 60 |
 | Paquetes de lenguas reales | **Ninguno todavía** |
 | Frases en español | Borrador **sin revisión clínica** |
 | ¿Se puede usar con pacientes? | **No todavía.** Ver `docs/PENDIENTES.md` |
@@ -174,20 +176,23 @@ Windows, así que `git add` no muestra avisos de CRLF.
 
 ## Desplegar en Railway
 
-El proyecto `nepantla` ya existe en Railway, con el servicio `nepantla-demo`,
-el volumen montado en `/data` y las variables `NEPANTLA_DEV_MODE=1` y
-`NEPANTLA_FORCE_HTTPS=1`. Falta conectarle el código:
+**Ya está desplegado** en modo demostración: https://nepantla-demo-production.up.railway.app
+(proyecto `nepantla`, servicio `nepantla-demo`). Railway construye con el
+`Dockerfile` (trae ffmpeg), revisa `/api/health` (`railway.json`) y vuelve a
+desplegar solo en cada `push` a `main`.
 
-1. Sube este repositorio a GitHub (sección anterior).
-2. En Railway: servicio `nepantla-demo` → *Settings → Source → Connect Repo* y elige el repositorio. Railway usa el `Dockerfile` (trae ffmpeg) y `railway.json` (revisa `/api/health`).
-3. *Settings → Networking → Generate Domain* para tener la dirección pública.
-4. Cuando quieras usar el estudio de grabación, agrega la variable `NEPANTLA_ADMIN_TOKEN` con un secreto largo que solo tú conozcas. Sin ella, el estudio queda apagado (así debe estar un demo público).
+- El volumen `nepantla-datos` está montado en `/data`: ahí viven la base, los
+  audios y los respaldos. Sin volumen, todo se perdería en cada despliegue.
+- Variables: `NEPANTLA_DEV_MODE=1`, `NEPANTLA_FORCE_HTTPS=1` y
+  `NEPANTLA_DATA_DIR=/data`.
+- Sin `NEPANTLA_ADMIN_TOKEN`, el estudio de grabación queda apagado (así debe
+  estar un demo público). Cuando quieras usarlo, agrega esa variable con un
+  secreto largo que solo tú conozcas.
+- Antes de un uso real: revisa qué guardan los registros de Railway (IP,
+  hora). Eso queda fuera del código; ver `docs/PRIVACY.md`.
 
-Si algún día lo armas desde cero: el servicio necesita un **volumen** en `/data` (sin él, la base y los audios se pierden en cada despliegue) y esas mismas variables.
- La app muestra una cinta amarilla de «AUDIO DE PRUEBA» mientras esté en modo demostración.
-5. Antes de un uso real: revisa qué guardan los registros de Railway (IP, hora). Eso queda fuera del código; ver `docs/PRIVACY.md`.
-
-Un demo público debe verse siempre como demo. No quites la cinta ni presentes los tonos de prueba como si fueran una lengua.
+Un demo público debe verse siempre como demo. No quites la cinta amarilla ni
+presentes los tonos de prueba como si fueran una lengua.
 
 ## Privacidad en corto
 
@@ -202,7 +207,7 @@ Detalle y cómo comprobarlo: `docs/PRIVACY.md`.
 - **Formato de audio.** Los audios son Opus dentro de Ogg, que funciona en Chrome y Firefox (el Android de gama baja es el objetivo). Algunos iPhone con versiones antiguas de iOS no lo reproducen; la app lo detecta y avisa. Hay que probarlo en teléfonos reales.
 - **Grabación en iPhone.** El estudio usa `MediaRecorder`; el servidor acepta WebM, MP4, Ogg y WAV y lo convierte todo a Opus. Falta verificarlo en Safari/iOS con un teléfono real.
 - **Teléfonos que no se conectan.** Una voz retirada se borra de cada teléfono en su siguiente conexión. Uno que nunca vuelve a conectarse conserva lo que tenía.
-- **Lighthouse y lectores de pantalla.** Las pruebas automáticas miden lo esencial (primera pantalla en 1.7 s con red 3G simulada, contraste, nombres accesibles, botones de 56 px), pero **Lighthouse no se ha corrido** y falta una prueba con TalkBack en un Android real. Para correrlo: `npx lighthouse http://localhost:8000 --view`.
+- **Lighthouse y lectores de pantalla.** Lighthouse 13.6.0 (PageSpeed Insights, móvil) sobre el demo: rendimiento 99, accesibilidad 96, buenas prácticas 100 y SEO 60. El SEO bajo es a propósito: la página pide no aparecer en buscadores (`noindex`) porque es una demostración. La accesibilidad pierde puntos porque la barra fija de «Emergencia» y «Pedir intérprete» tapa los últimos enlaces del inicio en teléfonos chicos hasta que se desplaza la pantalla; el arreglo propuesto está en `PROJECT_PROGRESS.md` y debe probarse en teléfonos reales. Falta recorrer la app con TalkBack en un Android real.
 
 ## Documentos
 

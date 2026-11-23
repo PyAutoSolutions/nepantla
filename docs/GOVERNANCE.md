@@ -16,7 +16,7 @@ paquete y un papel concretos.
 |-------|-----------------|--------------------|
 | **Hablante** | Aceptar el consentimiento, grabar, regrabar y retirar su voz o una frase | Aprobar grabaciones (ni las suyas ni las de otros) |
 | **Revisor** (intérprete o personal de salud) | Escuchar grabaciones pendientes y aprobarlas o rechazarlas con una nota | Revisar dos veces la misma grabación; revisar lo que él mismo grabó |
-| **Guardián** (una o dos personas de la comunidad por variante) | Publicar el paquete, retirar frases, retirar el paquete completo, atender reportes | Grabar o revisar con ese mismo enlace |
+| **Guardián** (al menos dos por variante: una persona intérprete de esa variante y una persona de salud, nombradas o aprobadas por la comunidad) | Publicar el paquete, retirar frases, retirar el paquete completo, atender reportes | Grabar o revisar con ese mismo enlace |
 | **Coordinación** (quien tiene `NEPANTLA_ADMIN_TOKEN`) | Crear paquetes en borrador, crear y revocar enlaces, ver conteos | **Publicar** un paquete, aprobar grabaciones, leer códigos de retiro |
 
 La última fila es deliberada: quien administra el servidor no puede publicar
@@ -82,6 +82,11 @@ Cualquier persona que use la app puede reportar una frase. El reporte lleva
 el paquete, la frase y un motivo de lista cerrada; no lleva texto libre. Los
 guardianes del paquete ven los reportes en su enlace y deciden: retirar la
 frase, pedir que se grabe otra vez o descartar el reporte.
+
+**Plazo: menos de 24 horas.** Los guardianes atienden cada reporte en menos
+de un día. Si no pueden escucharlo a tiempo, retiran la frase mientras tanto:
+es mejor que falte una frase a que suene una equivocada. Al retirarla, los
+teléfonos la borran en su siguiente conexión.
 
 ## Paquetes de prueba
 

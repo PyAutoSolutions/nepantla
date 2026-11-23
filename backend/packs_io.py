@@ -95,15 +95,16 @@ def import_pack_dir(
     now = now_iso()
     conn.execute(
         """
-        INSERT INTO packs (id, variant, language, community, version, status, license,
+        INSERT INTO packs (id, variant, language, community, region, version, status, license,
                            community_label, created_at, guardians, is_test, updated_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             pack_id,
             str(manifest.get("variant", "")),
             str(manifest.get("language", "")),
             str(manifest.get("community", "")),
+            str(manifest.get("region", "")),
             str(manifest.get("version", "0.1.0")),
             status,
             str(manifest.get("license", "")),

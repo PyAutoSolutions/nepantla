@@ -47,7 +47,7 @@ def test_manifest_tiene_el_formato_abierto(client, settings, tmp_path):
     manifest = client.get("/api/packs/nah-ejemplo-001/manifest.json").json()
     for field in (
         "format_version", "pack_id", "language", "variant", "community", "version",
-        "status", "license", "community_label", "guardians", "phrases",
+        "status", "license", "community_label", "guardians", "phrases", "region",
     ):
         assert field in manifest
     assert manifest["format_version"] == 1
@@ -186,3 +186,35 @@ def test_importar_entrega_un_token_de_retiro_por_voz(settings, client, tmp_path)
     with open_db(settings) as conn:
         stored = conn.execute("SELECT withdrawal_token_hash FROM consents").fetchone()[0]
     assert token not in stored and len(stored) == 64
+
+
+def test_region_de_la_variante_viaja_en_el_manifiesto(client, settings, tmp_path):
+    import json
+    folder = make_pack_dir(tmp_path, "nah-region-001", {"urg-001": DOS}, greeting=DOS)
+    manifest_file = folder / "manifest.json"
+    data = json.loads(manifest_file.read_text(encoding="utf-8"))
+    data["region"] = "Sierra Norte de Puebla"
+    manifest_file.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    import_dir(settings, folder)
+    assert client.get("/api/packs/nah-region-001/manifest.json").json()["region"] == "Sierra Norte de Puebla"
+
+
+def test_una_base_anterior_gana_la_columna_region(tmp_path):
+    import sqlite3
+    from backend.db import init_db
+    db = tmp_path / "vieja.db"
+    conn = sqlite3.connect(db)
+    conn.execute(
+        "CREATE TABLE packs (id TEXT PRIMARY KEY, variant TEXT NOT NULL, language TEXT NOT NULL, "
+        "community TEXT NOT NULL DEFAULT '', version TEXT NOT NULL DEFAULT '0.1.0', "
+        "status TEXT NOT NULL DEFAULT 'draft', license TEXT NOT NULL DEFAULT '', community_label TEXT, "
+        "created_at TEXT NOT NULL, guardians TEXT NOT NULL DEFAULT '[]', is_test INTEGER NOT NULL DEFAULT 0, "
+        "updated_at TEXT NOT NULL)"
+    )
+    conn.execute("INSERT INTO packs (id, variant, language, created_at, updated_at) VALUES ('a-b-c', 'v', 'l', 'x', 'x')")
+    conn.commit()
+    conn.close()
+    init_db(db)
+    conn = sqlite3.connect(db)
+    assert conn.execute("SELECT region FROM packs WHERE id = 'a-b-c'").fetchone() == ("",)
+    conn.close()

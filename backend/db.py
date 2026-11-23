@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS packs (
     variant         TEXT NOT NULL,
     language        TEXT NOT NULL,
     community       TEXT NOT NULL DEFAULT '',
+    region          TEXT NOT NULL DEFAULT '',
     version         TEXT NOT NULL DEFAULT '0.1.0',
     status          TEXT NOT NULL DEFAULT 'draft'
                     CHECK (status IN ('draft', 'approved', 'withdrawn')),
@@ -162,12 +163,20 @@ def open_db(settings) -> Iterator[sqlite3.Connection]:
         conn.close()
 
 
+def _migrate(conn: sqlite3.Connection) -> None:
+    """Pone al día una base creada con una versión anterior del esquema."""
+    columns = {row[1] for row in conn.execute("PRAGMA table_info(packs)")}
+    if "region" not in columns:
+        conn.execute("ALTER TABLE packs ADD COLUMN region TEXT NOT NULL DEFAULT ''")
+
+
 def init_db(db_path: Path) -> None:
     db_path.parent.mkdir(parents=True, exist_ok=True)
     conn = connect(db_path)
     try:
         conn.execute("PRAGMA journal_mode = WAL")
         conn.executescript(SCHEMA)
+        _migrate(conn)
         conn.commit()
     finally:
         conn.close()

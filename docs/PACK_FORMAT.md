@@ -29,6 +29,7 @@ El nombre de la carpeta es `pack-` seguido del `pack_id`.
   "language": "Náhuatl",
   "variant": "Náhuatl del centro (ejemplo ficticio)",
   "community": "Nombre de la comunidad",
+  "region": "Municipio y estado, o región",
   "version": "0.1.0",
   "status": "draft",
   "license": "La que eligió la comunidad",
@@ -62,6 +63,7 @@ lengua real.**
 | `format_version` | número | Siempre `1`. Otro valor se rechaza. |
 | `pack_id` | texto | Minúsculas, números y guiones; de 3 a 64 caracteres. |
 | `language`, `variant`, `community` | texto | Como los nombra la comunidad. |
+| `region` | texto | Dónde se habla esa variante: municipio, estado o región. Opcional; si falta, la ficha dice «Sin registrar». |
 | `version` | texto | Tres números (`0.1.0`). Sube con cada cambio. |
 | `status` | texto | `draft`, `approved` o `withdrawn`. |
 | `license` | texto | Libre: la define la comunidad. |

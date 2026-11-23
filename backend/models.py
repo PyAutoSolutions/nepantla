@@ -73,15 +73,17 @@ class PackCreate(Strict):
     language: ShortText
     variant: ShortText
     community: OptionalText = ""
+    region: OptionalText = ""
     license: OptionalText = ""
     community_label: Optional[OptionalText] = None
     guardians: list[ShortText] = Field(default_factory=list, max_length=12)
 
-    _clean = field_validator("language", "variant", "community", "license")(_no_control_chars)
+    _clean = field_validator("language", "variant", "community", "region", "license")(_no_control_chars)
 
 
 class PackUpdate(Strict):
     community: Optional[OptionalText] = None
+    region: Optional[OptionalText] = None
     license: Optional[OptionalText] = None
     community_label: Optional[OptionalText] = None
     guardians: Optional[list[ShortText]] = Field(default=None, max_length=12)

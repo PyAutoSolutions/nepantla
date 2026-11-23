@@ -155,6 +155,15 @@ export async function viewPacks(app) {
 
 /* ------------------------------------------------------ Ficha del paquete */
 
+/** Quién revisó las frases en español y cuándo, o que sigue pendiente. */
+function clinicalReview(data) {
+  const people = Array.isArray(data.clinical_reviewers) ? data.clinical_reviewers : [];
+  if (data.clinical_review !== "revisada" || people.length === 0) {
+    return "Pendiente: todavía no la firma una persona de salud.";
+  }
+  return people.map((p) => [p.name, p.role ? `(${p.role})` : "", p.date ? `, ${p.date}` : ""].join(" ").replace(" ,", ",").trim()).join("; ");
+}
+
 export async function viewPack(app, packId) {
   const record = app.packs.find((p) => p.pack_id === packId) || null;
   let manifest = record ? record.manifest : null;
@@ -201,12 +210,14 @@ export async function viewPack(app, packId) {
       ["Lengua", manifest.language],
       ["Variante", manifest.variant],
       ["Comunidad", manifest.community],
+      ["Región", manifest.region || (manifest.is_test ? "" : "Sin registrar")],
       ["Quién grabó", speakers.join(", ") || "Nadie todavía"],
       ["Quién revisó", reviewers.join(", ") || "Nadie todavía"],
       ["Fecha", lastDate],
       ["Versión", manifest.version],
       ["Estado", STATUS_ES[manifest.status] || manifest.status],
       ["Licencia", manifest.license || "Sin definir"],
+      ["Revisión clínica de las frases", clinicalReview(app.data)],
       ["Etiqueta comunitaria", manifest.community_label],
       ["Guardianes", (manifest.guardians || []).join(", ") || "Sin registrar"],
       ["Frases con audio", `${phraseEntries.size} de ${app.data.phrases.length}`],
@@ -423,6 +434,7 @@ export function viewPrivacy() {
         "El resumen y la tarjeta se muestran, se copian o se imprimen aquí mismo. Nunca se envían.",
         "No hay cuentas, cookies de seguimiento ni analítica de terceros. La app no carga nada de otros servidores.",
         "Lo único que sale del teléfono son conteos sueltos: «tal día, tal paquete, tal evento». Sin hora, sin IP guardada, sin dispositivo.",
+        "La empresa que hospeda el servidor (hoy, Railway) anota en sus registros técnicos la IP y el navegador de cada conexión. Nepantla no guarda esos datos.",
         "Un reporte de audio incorrecto lleva solo el paquete, la frase y un motivo de una lista.",
         "No usa inteligencia artificial generativa ni reconocimiento de voz. El micrófono solo se usa en el estudio, cuando un hablante graba con su consentimiento.",
       ]),

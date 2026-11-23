@@ -29,11 +29,12 @@ esto se puede inventar.
 - [ ] **Al menos un idioma** con todas las frases grabadas y con doble
       revisión, publicado por sus guardianes.
 - [ ] **Prueba piloto** con personal de salud y un hablante, con notas.
-- [ ] **Probar en teléfonos reales**: un Android de gama baja y un iPhone.
+- [ ] **Probar en teléfonos reales**: ya funciona en un Android en modo avión
+      (21 nov); faltan un Android de gama baja y un iPhone.
 - [x] **Lighthouse** (16 nov 2026, PageSpeed Insights, móvil): rendimiento
       99, accesibilidad 96, buenas prácticas 100, SEO 60 (`noindex` a
-      propósito). Falta decidir el arreglo de la barra fija que tapa los
-      últimos enlaces del inicio (ver `PROJECT_PROGRESS.md`, sección 11).
+      propósito). La barra fija que tapa los últimos enlaces del inicio se
+      queda como está (decisión del 22 nov, `PROJECT_PROGRESS.md`, sección 11).
 - [ ] **TalkBack**: recorrer la app con el lector de pantalla de Android.
 
 ## Para la prueba piloto (plantilla de notas)
@@ -55,9 +56,15 @@ Mientras esas notas no existan, no se debe afirmar que la herramienta
 
 - [x] Código en GitHub: `PyAutoSolutions/nepantla`.
 - [x] Demo en Railway: https://nepantla-demo-production.up.railway.app
-- [ ] Borrar la llave de despliegue temporal que se usó para subir el código
-      (GitHub → Settings → Deploy keys).
-- [ ] **Demo gratis en GitHub Pages** (opcional): hacer público el
-      repositorio y activar *Settings → Pages → Source: GitHub Actions*.
-- [ ] Grabar un video corto del demo. Debe verse la cinta amarilla de
-      «AUDIO DE PRUEBA» en todo momento.
+- [x] Borrar la llave de despliegue temporal que se usó para subir el código.
+- [ ] **Registros de Railway**: guardan IP y navegador de cada petición.
+      Preguntar el plazo de conservación antes de usar la app con pacientes
+      (ver `docs/PRIVACY.md`).
+- [ ] **Copias fuera del volumen**: antes de grabar voces reales, activar
+      *Backups* en Railway (cuesta por GB) y exportar cada paquete publicado
+      a una computadora de la coordinación.
+- [ ] **Activar GitHub Pages**: *Settings → Pages → Source: GitHub Actions* y
+      correr el flujo «Demo estático». Publica el sitio del proyecto y la demo
+      sin servidor en `/demo/`, gratis y sin fecha de vencimiento.
+- [x] Video demo de 78 s con subtítulos y la cinta de «AUDIO DE PRUEBA»
+      siempre visible (está en el sitio del proyecto).

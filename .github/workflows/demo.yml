@@ -1,4 +1,5 @@
-# Publica la demostración estática (AUDIO DE PRUEBA) en GitHub Pages.
+# Publica en GitHub Pages el sitio del proyecto (docs/index.html) y, en
+# /demo/, la demostración estática con AUDIO DE PRUEBA.
 #
 # Para activarla: en GitHub, Settings -> Pages -> Source: "GitHub Actions",
 # y luego Actions -> "Demo estático" -> Run workflow. En el plan gratuito,
@@ -53,7 +54,8 @@ jobs:
         with:
           python-version: "3.13"
       - run: pip install -r requirements.txt httpx
-      - run: python scripts/build_static_demo.py dist
+      - run: python scripts/build_static_demo.py dist/demo
+      - run: cp docs/index.html dist/index.html && touch dist/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

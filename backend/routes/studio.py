@@ -53,6 +53,7 @@ def _pack_public(pack: sqlite3.Row) -> dict:
         "language": pack["language"],
         "variant": pack["variant"],
         "community": pack["community"],
+        "region": pack["region"],
         "version": pack["version"],
         "status": pack["status"],
         "license": pack["license"],
@@ -83,12 +84,12 @@ def create_pack(body: PackCreate, request: Request):
         now = now_iso()
         conn.execute(
             """
-            INSERT INTO packs (id, variant, language, community, version, status, license,
+            INSERT INTO packs (id, variant, language, community, region, version, status, license,
                                community_label, created_at, guardians, is_test, updated_at)
-            VALUES (?, ?, ?, ?, '0.1.0', 'draft', ?, ?, ?, ?, 0, ?)
+            VALUES (?, ?, ?, ?, ?, '0.1.0', 'draft', ?, ?, ?, ?, 0, ?)
             """,
             (
-                body.pack_id, body.variant, body.language, body.community, body.license,
+                body.pack_id, body.variant, body.language, body.community, body.region, body.license,
                 body.community_label or None, now,
                 json.dumps(body.guardians, ensure_ascii=False), now,
             ),

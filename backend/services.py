@@ -177,6 +177,7 @@ def build_manifest(conn: sqlite3.Connection, pack: sqlite3.Row) -> dict:
         "language": pack["language"],
         "variant": pack["variant"],
         "community": pack["community"],
+        "region": pack["region"],
         "version": pack["version"],
         "status": pack["status"],
         "license": pack["license"],

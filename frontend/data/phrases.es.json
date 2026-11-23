@@ -2,6 +2,7 @@
   "format_version": 1,
   "language": "es",
   "clinical_review": "pendiente",
+  "clinical_reviewers": [],
   "notice": "FRASES SIN REVISIÓN CLÍNICA. Son un borrador de trabajo. Antes de usarlas con pacientes las debe revisar y firmar una persona de enfermería o medicina, y cada grabación la deben aprobar dos revisores.",
   "sources": {
     "nom-007": {

@@ -12,12 +12,16 @@ usa inteligencia artificial generativa ni reconocimiento de voz, no tiene
 cuentas de usuario y no guarda datos de pacientes. No sustituye a las
 personas intérpretes: el botón «Pedir intérprete» está en todas las pantallas.
 
+**Sitio del proyecto, con video de 78 s:** https://pyautosolutions.github.io/nepantla/
+
+![Seis pantallas de Nepantla sin internet: inicio, una frase, el mapa del cuerpo, la escala de dolor, el resumen y la tarjeta de salida.](docs/pantallas.jpg)
+
 ## Estado actual, sin adornos
 
 | | |
 |---|---|
-| Software | Completo y probado (162 pruebas automáticas) |
-| Demo en vivo | https://nepantla-demo-production.up.railway.app (solo audio de prueba) |
+| Software | Completo y probado (164 pruebas automáticas) |
+| Demo en vivo | https://pyautosolutions.github.io/nepantla/demo/ (sin servidor) y https://nepantla-demo-production.up.railway.app (con servidor), solo audio de prueba |
 | Lighthouse (móvil) | Rendimiento 99 · Accesibilidad 96 · Buenas prácticas 100 · SEO 60 |
 | Paquetes de lenguas reales | **Ninguno todavía** |
 | Frases en español | Borrador **sin revisión clínica** |
@@ -59,7 +63,8 @@ python scripts/build_static_demo.py
 
 Esa carpeta se puede hospedar gratis en cualquier sitio de archivos
 estáticos. El repositorio ya trae el flujo `.github/workflows/demo.yml`, que
-la publica en **GitHub Pages** en cada `push` a `main` (o `master`). Para
+la publica en **GitHub Pages**, en `/demo/`, junto con el sitio del proyecto
+(`docs/index.html`), en cada `push` a `main` (o `master`). Para
 activarlo: en GitHub, *Settings → Pages → Source: GitHub Actions* (en el plan
 gratuito el repositorio debe ser público) y luego *Actions → Demo estático →
 Run workflow*. Mientras Pages no esté activado, el flujo no publica nada y
@@ -107,7 +112,7 @@ Cómo se organiza todo eso: `docs/GOVERNANCE.md`.
 
 ```bash
 pip install -r requirements-dev.txt
-python -m pytest -q                    # servidor: 138 pruebas
+python -m pytest -q                    # servidor: 140 pruebas
 node --test tests_js/core.test.mjs     # lógica de la app: 10 pruebas
 
 playwright install chromium            # solo la primera vez
@@ -207,7 +212,7 @@ Detalle y cómo comprobarlo: `docs/PRIVACY.md`.
 - **Formato de audio.** Los audios son Opus dentro de Ogg, que funciona en Chrome y Firefox (el Android de gama baja es el objetivo). Algunos iPhone con versiones antiguas de iOS no lo reproducen; la app lo detecta y avisa. Hay que probarlo en teléfonos reales.
 - **Grabación en iPhone.** El estudio usa `MediaRecorder`; el servidor acepta WebM, MP4, Ogg y WAV y lo convierte todo a Opus. Falta verificarlo en Safari/iOS con un teléfono real.
 - **Teléfonos que no se conectan.** Una voz retirada se borra de cada teléfono en su siguiente conexión. Uno que nunca vuelve a conectarse conserva lo que tenía.
-- **Lighthouse y lectores de pantalla.** Lighthouse 13.6.0 (PageSpeed Insights, móvil) sobre el demo: rendimiento 99, accesibilidad 96, buenas prácticas 100 y SEO 60. El SEO bajo es a propósito: la página pide no aparecer en buscadores (`noindex`) porque es una demostración. La accesibilidad pierde puntos porque la barra fija de «Emergencia» y «Pedir intérprete» tapa los últimos enlaces del inicio en teléfonos chicos hasta que se desplaza la pantalla; el arreglo propuesto está en `PROJECT_PROGRESS.md` y debe probarse en teléfonos reales. Falta recorrer la app con TalkBack en un Android real.
+- **Lighthouse y lectores de pantalla.** Lighthouse 13.6.0 (PageSpeed Insights, móvil) sobre el demo: rendimiento 99, accesibilidad 96, buenas prácticas 100 y SEO 60. El SEO bajo es a propósito: la página pide no aparecer en buscadores (`noindex`) porque es una demostración. La accesibilidad pierde puntos porque la barra fija de «Emergencia» y «Pedir intérprete» tapa los últimos enlaces del inicio en teléfonos chicos hasta que se desplaza la pantalla; se decidió dejarla así (razones en `PROJECT_PROGRESS.md`). Falta recorrer la app con TalkBack en un Android real.
 
 ## Documentos
 

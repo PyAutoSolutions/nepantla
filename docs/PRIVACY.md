@@ -87,11 +87,21 @@ existe ningún endpoint que las reciba.
 
 ## Lo que el código no controla
 
-- **Registros del proveedor de hospedaje.** Railway (o cualquier proxy
-  delante de la app) puede anotar IP y hora de cada petición en sus propios
-  registros. Eso está fuera del código. Antes de usar la app con pacientes:
-  revisar qué guarda el proveedor, por cuánto tiempo, y desactivarlo o
-  acortarlo si se puede. Está en la lista de `docs/PENDIENTES.md`.
+- **Registros del proveedor de hospedaje.** Railway guarda un registro por
+  cada petición con la IP de origen (`srcIp`), el navegador (`clientUa`),
+  la ruta, la hora y el resultado. Su documentación no dice cuánto tiempo lo
+  conserva ni cómo apagarlo. La app no guarda nada de eso, y la pantalla de
+  privacidad de la app lo avisa. Antes de usar la app con pacientes:
+  preguntar a Railway el plazo de conservación y, si no es aceptable, poner
+  delante un proxy propio que no guarde IP o cambiar de hospedaje. Está en
+  `docs/PENDIENTES.md`.
+- **Copias de seguridad.** La app copia la base de datos una vez al día
+  dentro del volumen (`/data/backups`). Si se borra el volumen, esas copias
+  se van con él. Railway ofrece copias del volumen en la pestaña *Backups*
+  del servicio (diarias por 6 días, semanales por 27 y mensuales por 89),
+  con costo por GB y sin descarga. Antes de grabar voces reales: activar esas
+  copias y, además, exportar cada paquete publicado (formato abierto) a una
+  computadora de la coordinación.
 - **El teléfono mismo.** Capturas de pantalla, copias de seguridad del
   sistema o una persona mirando por encima del hombro quedan fuera del
   alcance de la app.

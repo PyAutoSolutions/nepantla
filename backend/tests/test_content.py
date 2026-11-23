@@ -77,7 +77,14 @@ def test_los_ejemplos_de_la_especificacion_conservan_su_id():
 
 
 def test_todo_el_contenido_esta_marcado_sin_revision_clinica():
-    assert DATA["clinical_review"] == "pendiente"
+    # Mientras nadie de salud firme, sigue "pendiente" y sin nombres. Al firmar:
+    # "revisada" y cada persona con nombre y fecha (se muestran en la ficha).
+    assert DATA["clinical_review"] in {"pendiente", "revisada"}
+    people = DATA["clinical_reviewers"]
+    if DATA["clinical_review"] == "pendiente":
+        assert people == []
+    else:
+        assert people and all(p.get("name") and p.get("date") for p in people)
     assert "SIN REVISIÓN CLÍNICA" in DATA["notice"]
 
 

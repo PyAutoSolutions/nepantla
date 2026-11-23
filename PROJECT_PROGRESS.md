@@ -4,9 +4,9 @@ Este archivo existe para poder retomar el trabajo sin repetir nada si una
 sesión se corta. Se actualiza al cerrar cada bloque. **No sustituye a
 revisar los archivos**: antes de continuar, corre las pruebas de la sección 5.
 
-Última actualización: 16 de noviembre de 2026 (noche). **Versión 0.1.0
-terminada, en GitHub y desplegada en Railway en modo demostración
-(sección 11).**
+Última actualización: 22 de noviembre de 2026. **Versión 0.1.0 terminada,
+publicada en GitHub y desplegada en Railway en modo demostración. Lo único
+que falta es trabajo de personas (sección 11).**
 
 ## 1. Objetivo
 
@@ -66,13 +66,13 @@ cifras de impacto ni permisos de comunidades.
 ## 5. Cómo comprobar el estado real
 
 ```bash
-python -m pytest -q                      # backend: 138 pruebas
+python -m pytest -q                      # backend: 140 pruebas
 node --test tests_js/core.test.mjs       # lógica de la app: 10 pruebas
 python -m pytest e2e -q                  # navegador: 14 pruebas (necesita Chrome/Chromium)
 ```
 
-Resultados de la última corrida (15 nov 2026): 138 / 10 / 14, todas en verde
-(162 en total). Se corrieron dos veces: en la carpeta de trabajo y desde una
+Resultados de la última corrida (23 nov 2026): 140 / 10 / 14, todas en verde
+(164 en total). Antes (15 nov): 138 / 10 / 14. Se corrieron dos veces: en la carpeta de trabajo y desde una
 copia extraída del ZIP de entrega.
 
 ## 6. Bloque 9: documentación y despliegue (terminado)
@@ -110,15 +110,14 @@ copia extraída del ZIP de entrega.
 | 6 escenarios con ~80 frases en español, con pictogramas | Cumplido (83 frases, 124 pictogramas) |
 | Al menos un idioma con todas las frases grabadas y doblemente revisadas | **Pendiente: necesita personas reales** |
 | Ficha pública, botón de reportar y retiro de voces | Cumplido y probado |
-| Pruebas pasando y Lighthouse sin errores graves | Pruebas: 162 en verde. Lighthouse: 99 / 96 / 100 / 60, sin errores graves |
+| Pruebas pasando y Lighthouse sin errores graves | Pruebas: 164 en verde. Lighthouse: 99 / 96 / 100 / 60, sin errores graves |
 | Prueba piloto con personal de salud y un hablante | **Pendiente: necesita personas reales** |
 
 ### Siguiente acción concreta
 
-1. Probar el demo en dos teléfonos reales (un Android de gama baja y un
-   iPhone) y recorrerlo con TalkBack.
-2. Con esa prueba, decidir el arreglo de la barra fija (sección 11).
-3. Empezar por `docs/PENDIENTES.md`: revisión clínica y primer acuerdo con
+1. Probar el demo en un Android de gama baja y en un iPhone, y recorrerlo
+   con TalkBack.
+2. Empezar por `docs/PENDIENTES.md`: revisión clínica y primer acuerdo con
    una comunidad.
 
 ## 8. Fuentes consultadas (ya están citadas en `phrases.es.json`)
@@ -145,26 +144,26 @@ consentimiento (`frontend/audio/consentimiento.es.opus`).
 - El registro de accesos de Railway (su proxy) queda fuera del código: hay
   que revisarlo al desplegar (ver `docs/PRIVACY.md`).
 
-## 11. Publicación: estado real comprobado el 16 nov 2026 (noche)
+## 11. Publicación: estado real comprobado el 22 nov 2026
 
 ### GitHub: hecho
 
-- Repositorio `PyAutoSolutions/nepantla`, rama `main`, commit `b3c4db4`
-  («Nepantla: MVP»). Lo subió Gabriel desde su teléfono con el ZIP de 194
-  archivos: el conector de GitHub de la sesión no podía crear repositorios
-  (error 403).
-- La sesión de trabajo no puede leer ese repositorio, así que no se comparó
-  archivo por archivo. Sí se comprobó lo que Railway construyó desde él: el
-  identificador de los archivos de la app (`build` en `/api/health`) es
-  `35e69ec22a51`, igual al de la versión probada.
-- La llave de despliegue temporal que se usó para subirlo debe borrarse.
+- Repositorio público `PyAutoSolutions/nepantla`, rama `main`. Lo subió
+  Gabriel desde su teléfono con el ZIP de 194 archivos (el conector de
+  GitHub de la sesión no podía crear repositorios: error 403). Último commit
+  comprobado: `4965d97` («Actualizar README, progreso y pendientes»).
+- Comparado el 22 nov archivo por archivo contra la versión de trabajo: el
+  árbol de git es idéntico (`e508c258…`, 194 archivos).
+- El flujo «Demo estático» corrió en GitHub con los dos `push` y terminó en
+  verde: como Pages no está activado, revisa, no publica y no marca error.
+- Gabriel ya borró la llave de despliegue temporal.
 
 ### Railway: desplegado en modo demostración
 
 - Liga: https://nepantla-demo-production.up.railway.app
 - Proyecto `nepantla`, servicio `nepantla-demo`, despliegue
-  `98e0716a-7a36-4f71-bc47-d8ba95f75c4b`: SUCCESS, región `sfo`. Se vuelve a
-  desplegar solo con cada `push` a `main`.
+  `a13781e9-13ed-4487-aaf1-e30416885c5e` (commit `4965d97`): SUCCESS, región
+  `sfo`. Se vuelve a desplegar solo con cada `push` a `main`.
 - Variables `NEPANTLA_DEV_MODE=1`, `NEPANTLA_FORCE_HTTPS=1` y
   `NEPANTLA_DATA_DIR=/data`; volumen `nepantla-datos` (500 MB) en `/data`.
   Sin token de administración: el estudio queda apagado.
@@ -182,8 +181,11 @@ Comprobado en la liga pública:
 - Registro HTTP de Railway: ninguna respuesta de error de la app. El único
   404 fue `/robots.txt`, que no existe.
 - Registro de arranque: volumen montado y Uvicorn en marcha, sin errores.
-- No comprobado en la liga: el modo sin conexión. Lo prueba la suite de
-  navegador en local.
+- Modo sin conexión en la liga: Gabriel lo probó el 21 nov en su teléfono
+  Android. Guardó el paquete de prueba A con internet, puso modo avión (sin
+  Wi-Fi ni datos) y abrió la liga en una pestaña nueva: la app cargó desde
+  el teléfono con el aviso «Sin internet. Todo sigue funcionando con lo
+  guardado.», mostró la variante guardada y dejó elegir lengua.
 
 ### Lighthouse
 
@@ -210,6 +212,11 @@ lenta), sobre la liga pública:
   cambiar de pantalla y quitar esa altura al imprimir. No se aplicó porque
   cambia cómo se desplaza toda la app y debe probarse antes en teléfonos
   reales.
+- Decisión (22 nov): la barra se queda como está. En las capturas del
+  teléfono de Gabriel, al bajar la pantalla todo el contenido queda por
+  encima de la barra. Cambiar cómo se desplaza toda la app por ese punto de
+  Lighthouse no compensa el riesgo; el arreglo queda escrito por si la
+  prueba piloto lo pide.
 
 ### Demostración sin servidor
 
@@ -219,8 +226,9 @@ lenta), sobre la liga pública:
   archivo, a lo publicado.
 - Límites de ese visor: no deja instalar la app ni usarla sin conexión, y no
   imprime. Para eso hace falta Railway o GitHub Pages.
-- El flujo `.github/workflows/demo.yml` (GitHub Pages) no se ha podido probar
-  en GitHub.
+- El flujo `.github/workflows/demo.yml` ya corrió en GitHub, en verde y sin
+  publicar, porque Pages no está activado. Publicar en Pages sigue sin
+  probarse.
 
 ### Correcciones de esta etapa
 
@@ -245,17 +253,65 @@ los últimos cambios (flujo de Pages, `.gitattributes` y documentación, sin
 tocar código) se repitieron las 138 del servidor.
 Desde el 16 nov, la copia de referencia es el repositorio de GitHub.
 
+### Material para mostrarlo (22 nov)
+
+- Sitio de una página: `docs/index.html` (problema, cifras con fuente,
+  cómo funciona, principios, estado y cómo ayudar). Lleva dentro el video,
+  las capturas y la letra, sin nada de otros servidores. El flujo de Pages
+  lo publica en la raíz y la demo sin servidor en `/demo/`.
+- Probado en local bajo `/nepantla/`, como en GitHub Pages: el sitio se ve
+  bien a 1280 y 390 px de ancho, y la demo en `/demo/` guarda el paquete y
+  vuelve a abrir sin internet.
+- Video demo de 78 s, vertical, con subtítulos y los dos tonos de prueba.
+- `docs/pantallas.jpg`: seis pantallas para el README.
+- Fuera del repositorio: PDF de una hoja, póster, formato de revisión
+  clínica y mensajes para pedir cartas y revisiones.
+- Cifras: INEGI, Censo 2020 (7 364 645 hablantes de 3 años y más; 865 972
+  no hablan español) e INALI, Catálogo de 2008 (68 agrupaciones, 364
+  variantes, 11 familias).
+
+### Cierre de la revisión contra la checklist (23 nov)
+
+Revisión punto por punto contra «Nepantla: checklist de lanzamiento». Se
+cerraron cuatro detalles de código y documentos:
+
+- La ficha de cada paquete muestra la **revisión clínica** de las frases
+  (pendiente, o nombre, papel y fecha de quien firmó). Datos en
+  `frontend/data/phrases.es.json`: `clinical_review` y `clinical_reviewers`.
+- **Región** de la variante en el formato de paquete, el estudio, el
+  servidor y la ficha. Las bases anteriores ganan la columna solas.
+- `GOVERNANCE.md`: reportes atendidos en **menos de 24 horas** (si no, la
+  frase se retira mientras tanto) y **guardianes**: al menos una persona
+  intérprete y una de salud por variante.
+- `PRIVACY.md` y la pantalla de privacidad: Railway registra IP y navegador
+  de cada petición; plan de copias de seguridad fuera del volumen.
+
+Pruebas: 140 del servidor (2 nuevas: región en el manifiesto y migración de
+una base anterior), 10 de lógica y 14 de navegador, todas en verde.
+
+### Entrega del 23 nov
+
+- Lista de convocatorias que se hacen desde casa, con fechas comprobadas en
+  sus páginas oficiales: documento aparte «Convocatorias para Nepantla (desde
+  casa)», fuera del repositorio.
+- Los 19 archivos que cambiaron desde el commit `4965d97` de GitHub van en
+  `nepantla-cambios-23nov.zip`, con sus carpetas. Falta subirlos: Claude no
+  tiene permiso de escritura en el repositorio.
+- El sitio publicado como artifact ya dice «Más de 160 pruebas».
+- Copias de seguridad: la base de Railway hoy solo guarda datos de prueba, y
+  las copias de Railway no se pueden descargar. Cuando haya datos reales:
+  exportar los paquetes desde el Estudio y decidir si se activan las copias
+  de Railway, que tienen costo.
+
 ### Lo que necesita a una persona
 
-1. Borrar la llave de despliegue temporal: en GitHub (Settings → Deploy
-   keys) y en el teléfono donde se creó.
-2. Probar el demo en dos teléfonos reales (un Android de gama baja y un
-   iPhone) y recorrerlo con TalkBack.
-3. La validación humana de `docs/PENDIENTES.md`: revisión clínica de las 83
+1. Probar el demo en un Android de gama baja y en un iPhone, y recorrerlo
+   con TalkBack.
+2. La validación humana de `docs/PENDIENTES.md`: revisión clínica de las 83
    frases, hablantes e intérpretes, acuerdo con una comunidad y sus
    guardianes, revisión legal, prueba piloto y el audio humano del
    consentimiento.
 
 **Nepantla no está listo para usarse con pacientes** hasta completar el
-punto 3. Los audios incluidos son tonos de prueba, no grabaciones en ninguna
+punto 2. Los audios incluidos son tonos de prueba, no grabaciones en ninguna
 lengua.

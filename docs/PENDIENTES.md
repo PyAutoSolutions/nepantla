@@ -7,13 +7,16 @@ esto se puede inventar.
 ## Antes de grabar una sola frase
 
 - [ ] **Revisión clínica firmada** de las 83 frases en español
-      (`docs/FUENTES.md` explica qué revisar).
+      (`docs/FUENTES.md` explica qué revisar). El 24 nov se pidió ayuda por
+      correo a Compañeros En Salud (Chiapas); falta su respuesta.
 - [ ] **Acuerdo con la comunidad** de la primera variante: quiénes serán sus
       guardianes, qué licencia eligen y si quieren una etiqueta comunitaria.
 - [ ] **Intérpretes certificados** de esa variante para la doble revisión.
       Una pista para buscarlos: el Padrón Nacional de Intérpretes y
       Traductores en Lenguas Indígenas (PANITLI) del INALI. Hay que confirmar
-      con la institución que el padrón siga vigente.
+      con la institución que el padrón siga vigente. El 24 nov se pidió
+      orientación por correo a la Unidad de Profesionalización en Lenguas
+      Indígenas Nacionales del INALI; falta su respuesta.
 - [ ] **Audio del consentimiento** grabado por una persona, guardado en
       `frontend/audio/consentimiento.es.opus`. Cuando el archivo existe, el
       botón «Escuchar esta explicación» aparece solo.

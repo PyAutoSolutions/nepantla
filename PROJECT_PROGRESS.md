@@ -350,6 +350,25 @@ ninguna parte del cuerpo se quede sin zona.
   vista y toque en unos 90 ms. Safari no se pudo simular (ver
   `docs/PENDIENTES.md`).
 
+### Publicación del mapa realista (comprobada el 24 nov)
+
+- GitHub: commit `ecb382a` en `main`, subido por Gabriel. Su árbol de git
+  (`cbbd817…`) es idéntico al de la versión preparada y probada.
+- GitHub Pages: el flujo «Demo estático» #8 terminó bien (43 s). En la demo
+  publicada, el mapa muestra el cuerpo realista con sus 35 zonas de frente,
+  cada una con nombre para el lector de pantalla; tocar «Boca del estómago»
+  la marca con palomita y crea su etiqueta para quitarla. La vista de la cara
+  muestra 21 zonas. El sitio ya dice «mapa del cuerpo realista con 81 zonas».
+- Railway: despliegue `1b501a51-eb73-4f2c-b863-c54686f43a47` (commit
+  `ecb382a`): SUCCESS. `/api/health` responde con `build` `7a370b5ab067`, la
+  huella del frontend de esta versión.
+- Video del sitio y `docs/pantallas.jpg`: rehechos con las pantallas nuevas
+  (mismo guion de 78 s).
+- Correos enviados el 24 nov: a Compañeros En Salud, para pedir revisión
+  clínica de las frases y del mapa, y a la Unidad de Profesionalización en
+  Lenguas Indígenas Nacionales del INALI, para pedir orientación sobre cómo
+  trabajar con intérpretes del PANITLI. Sin respuesta todavía.
+
 ### Lo que necesita a una persona
 
 1. Probar el demo en un Android de gama baja y en un iPhone, y recorrerlo

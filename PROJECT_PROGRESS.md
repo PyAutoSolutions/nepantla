@@ -155,7 +155,7 @@ consentimiento (`frontend/audio/consentimiento.es.opus`).
 - Comparado el 22 nov archivo por archivo contra la versión de trabajo: el
   árbol de git es idéntico (`e508c258…`, 194 archivos).
 - El flujo «Demo estático» corrió en GitHub con los dos `push` y terminó en
-  verde: como Pages no está activado, revisa, no publica y no marca error.
+  verde: Pages ya está activo y publica en cada push a main.
 - Gabriel ya borró la llave de despliegue temporal.
 
 ### Railway: desplegado en modo demostración

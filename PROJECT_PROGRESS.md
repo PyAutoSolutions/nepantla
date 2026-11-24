@@ -4,9 +4,9 @@ Este archivo existe para poder retomar el trabajo sin repetir nada si una
 sesión se corta. Se actualiza al cerrar cada bloque. **No sustituye a
 revisar los archivos**: antes de continuar, corre las pruebas de la sección 5.
 
-Última actualización: 22 de noviembre de 2026. **Versión 0.1.0 terminada,
-publicada en GitHub y desplegada en Railway en modo demostración. Lo único
-que falta es trabajo de personas (sección 11).**
+Última actualización: 24 de noviembre de 2026. **Versión 0.1.0 terminada,
+publicada en GitHub y en GitHub Pages, y desplegada en Railway en modo
+demostración. Lo único que falta es trabajo de personas (sección 11).**
 
 ## 1. Objetivo
 
@@ -227,8 +227,8 @@ lenta), sobre la liga pública:
 - Límites de ese visor: no deja instalar la app ni usarla sin conexión, y no
   imprime. Para eso hace falta Railway o GitHub Pages.
 - El flujo `.github/workflows/demo.yml` ya corrió en GitHub, en verde y sin
-  publicar, porque Pages no está activado. Publicar en Pages sigue sin
-  probarse.
+  publicar, porque Pages no estaba activado. Desde el 23 nov Pages está
+  activo y publica (ver «Publicación final»).
 
 ### Correcciones de esta etapa
 
@@ -295,13 +295,30 @@ una base anterior), 10 de lógica y 14 de navegador, todas en verde.
   sus páginas oficiales: documento aparte «Convocatorias para Nepantla (desde
   casa)», fuera del repositorio.
 - Los 19 archivos que cambiaron desde el commit `4965d97` de GitHub van en
-  `nepantla-cambios-23nov.zip`, con sus carpetas. Falta subirlos: Claude no
-  tiene permiso de escritura en el repositorio.
+  `nepantla-cambios-23nov.zip`, con sus carpetas. Gabriel los subió desde
+  Termux el mismo día (commit `1d28049`).
 - El sitio publicado como artifact ya dice «Más de 160 pruebas».
 - Copias de seguridad: la base de Railway hoy solo guarda datos de prueba, y
   las copias de Railway no se pueden descargar. Cuando haya datos reales:
   exportar los paquetes desde el Estudio y decidir si se activan las copias
   de Railway, que tienen costo.
+
+### Publicación final (comprobada el 24 nov)
+
+- GitHub: commit `1d28049` en `main`. Su árbol de git es idéntico al de la
+  versión de trabajo (`16efe303…`).
+- GitHub Pages: activado el 23 nov con la fuente «GitHub Actions»; el flujo
+  «Demo estático» publica en cada `push`.
+  - Sitio: https://pyautosolutions.github.io/nepantla/ (ya dice «Más de 160
+    pruebas»).
+  - Demo sin servidor: https://pyautosolutions.github.io/nepantla/demo/.
+    Probada en un navegador: carga con la cinta de modo demostración, guarda
+    el paquete de prueba A («Ya funciona sin internet») y la ficha muestra
+    «Revisión clínica de las frases: Pendiente».
+- Railway: despliegue `d11e3b8d-bb64-46c6-9f25-0ddd92be8d06` (commit
+  `1d28049`): SUCCESS. `/api/health` responde con `build` `de3a62c05445`, que
+  es la huella del frontend de esta versión; el servidor arrancó sin errores
+  con la base que ya existía.
 
 ### Lo que necesita a una persona
 

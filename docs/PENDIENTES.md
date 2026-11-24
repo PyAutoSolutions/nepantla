@@ -63,8 +63,9 @@ Mientras esas notas no existan, no se debe afirmar que la herramienta
 - [ ] **Copias fuera del volumen**: antes de grabar voces reales, activar
       *Backups* en Railway (cuesta por GB) y exportar cada paquete publicado
       a una computadora de la coordinación.
-- [ ] **Activar GitHub Pages**: *Settings → Pages → Source: GitHub Actions* y
-      correr el flujo «Demo estático». Publica el sitio del proyecto y la demo
-      sin servidor en `/demo/`, gratis y sin fecha de vencimiento.
+- [x] **GitHub Pages** activo desde el 23 nov 2026: sitio del proyecto en
+      https://pyautosolutions.github.io/nepantla/ y demo sin servidor en
+      https://pyautosolutions.github.io/nepantla/demo/, gratis y sin fecha de
+      vencimiento.
 - [x] Video demo de 78 s con subtítulos y la cinta de «AUDIO DE PRUEBA»
       siempre visible (está en el sitio del proyecto).

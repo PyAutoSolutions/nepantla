@@ -64,12 +64,11 @@ python scripts/build_static_demo.py
 Esa carpeta se puede hospedar gratis en cualquier sitio de archivos
 estáticos. El repositorio ya trae el flujo `.github/workflows/demo.yml`, que
 la publica en **GitHub Pages**, en `/demo/`, junto con el sitio del proyecto
-(`docs/index.html`), en cada `push` a `main` (o `master`). Para
-activarlo: en GitHub, *Settings → Pages → Source: GitHub Actions* (en el plan
-gratuito el repositorio debe ser público) y luego *Actions → Demo estático →
-Run workflow*. Mientras Pages no esté activado, el flujo no publica nada y
-termina sin error. El flujo no se ha podido probar todavía en GitHub; la
-carpeta `dist/` sí está probada en un navegador.
+(`docs/index.html`), en cada `push` a `main` (o `master`). En este
+repositorio ya está activo: https://pyautosolutions.github.io/nepantla/demo/.
+En una copia propia se activa en *Settings → Pages → Source: GitHub Actions*
+(en el plan gratuito el repositorio debe ser público). Mientras Pages no esté
+activado, el flujo no publica nada y termina sin error.
 
 En la demostración estática no hay estudio de grabación, y la app no envía
 contadores ni reportes. Los audios de cada paquete viajan juntos en un solo

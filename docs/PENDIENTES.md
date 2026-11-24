@@ -30,7 +30,15 @@ esto se puede inventar.
       revisión, publicado por sus guardianes.
 - [ ] **Prueba piloto** con personal de salud y un hablante, con notas.
 - [ ] **Probar en teléfonos reales**: ya funciona en un Android en modo avión
-      (21 nov); faltan un Android de gama baja y un iPhone.
+      (21 nov); faltan un Android de gama baja y un iPhone. Simulado el
+      24 nov: con el procesador 6 veces más lento y sin red, el mapa del
+      cuerpo abre en 182 ms y responde al toque en unos 90 ms, y en una
+      pantalla de 320 px no se sale de la orilla. Safari (iPhone) no se pudo
+      simular: el navegador WebKit no se pudo descargar en el entorno de
+      trabajo. Una simulación no sustituye al teléfono real.
+- [ ] **Mapa del cuerpo**: que personal de salud y hablantes revisen que las
+      81 zonas y sus nombres («Boca del estómago», «Paleta», «Rabadilla»…)
+      se entienden en consulta.
 - [x] **Lighthouse** (16 nov 2026, PageSpeed Insights, móvil): rendimiento
       99, accesibilidad 96, buenas prácticas 100, SEO 60 (`noindex` a
       propósito). La barra fija que tapa los últimos enlaces del inicio se

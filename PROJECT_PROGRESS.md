@@ -37,7 +37,7 @@ cifras de impacto ni permisos de comunidades.
 |---|--------|--------|-----------|
 | 1 | Backend FastAPI + SQLite (paquetes, uso, reportes, estudio, retiro, respaldos, cabeceras) | Terminado | `backend/`, 135 pruebas pytest en verde |
 | 2 | Contenido: 83 frases en 6 escenarios, con fuentes oficiales | Terminado (falta revisión clínica humana) | `frontend/data/phrases.es.json` |
-| 3 | 124 pictogramas SVG propios | Terminado | `frontend/icons/pictos.svg` |
+| 3 | 124 pictogramas SVG (56 a color de Fluent Emoji, MIT, desde el 24 nov) | Terminado | `frontend/icons/pictos.svg` |
 | 4 | Paquetes de AUDIO DE PRUEBA (tonos, sin voz) | Terminado | `packs/pack-prueba-a-001`, `packs/pack-prueba-b-001`, `scripts/make_test_packs.py` |
 | 5 | PWA: 12 pantallas de consulta, modo médico/paciente | Terminado | `frontend/app.js`, `frontend/js/views-consult.js`, `views-packs.js` |
 | 6 | Modo sin internet (service worker + IndexedDB + versiones + borrado de retirados) | Terminado | `frontend/sw.js`, `frontend/js/store.js`, `net.js` |
@@ -319,6 +319,36 @@ una base anterior), 10 de lógica y 14 de navegador, todas en verde.
   `1d28049`): SUCCESS. `/api/health` responde con `build` `de3a62c05445`, que
   es la huella del frontend de esta versión; el servidor arrancó sin errores
   con la base que ya existía.
+
+### 12. Mapa del cuerpo realista y pictogramas a color (24 nov)
+
+Pedido de Gabriel: imágenes más reales en lugar de figuras geométricas, y que
+ninguna parte del cuerpo se quede sin zona.
+
+- **Mapa del cuerpo** (`frontend/js/bodymap.js`, `frontend/js/cuerpo-datos.js`,
+  `frontend/img/cuerpo/`): cuerpo humano 3D realista de mujer y de hombre,
+  de frente, de espalda y la cara de cerca, renderizado con Blender a partir
+  del modelo de MakeHuman (CC0). No es IA generativa ni fotos de personas.
+  - 81 zonas sacadas del propio modelo 3D (huesos del esqueleto y medidas del
+    cuerpo), así que todo el cuerpo queda cubierto. Antes había 26.
+  - Abdomen en las 9 regiones clínicas con nombres sencillos; espalda con
+    paletas, riñones, cintura y rabadilla; cara con frente, sienes, ojos,
+    oídos, nariz, cachetes, boca, quijada, garganta y cuello.
+  - Botón «Me duele todo el cuerpo» y chips para quitar una zona.
+  - Seis imágenes WebP, 133 KB en total, guardadas para usarse sin internet.
+  - Cómo se generan: `scripts/cuerpo/LEEME.md`.
+- **Pictogramas a color**: 56 de los 71 de contenido usan Fluent Emoji de
+  Microsoft (MIT, aviso en `frontend/icons/LICENSE-fluent-emoji.txt`). Se
+  quedaron los originales donde el emoji no se entendía (caída, debilidad,
+  pecho, presión, radiografía, «No sabe»…) y donde el emoji trae una cruz
+  roja (urgencias, hospital, regresar).
+- Licencias anotadas en `docs/ATTRIBUTIONS.md` y en «Acerca de».
+- Pruebas: 140 del servidor, 10 de la lógica y 14 en navegador, todas
+  pasaron (24 nov). La prueba de la lógica ahora revisa que cada zona tenga
+  nombre y que la derecha del paciente quede del lado correcto en cada vista.
+- Simulación de un Android lento sin red: mapa listo en 182 ms, cambio de
+  vista y toque en unos 90 ms. Safari no se pudo simular (ver
+  `docs/PENDIENTES.md`).
 
 ### Lo que necesita a una persona
 

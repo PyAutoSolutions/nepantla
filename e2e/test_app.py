@@ -114,7 +114,7 @@ def test_resumen_correcto(phone):
         "¿Le duele el pecho?", "No",
         "¿Tiene sangrado?", "No sabe",
         "¿Qué le pasa?", "Dolor, Fiebre",
-        "¿Dónde le duele?", "Pecho, Espalda baja (cintura)",
+        "¿Dónde le duele?", "Centro del pecho, Espalda baja (cintura)",
         "¿Cuánto le duele?", "7 de 10",
         "¿Desde cuándo se siente mal?", "Hace días",
         "¿Se desmayó?", "Sin respuesta", "Marcó «No entendí». Conviene confirmar con intérprete.",

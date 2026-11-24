@@ -1001,78 +1001,122 @@ main:focus {
   height: 42px;
 }
 
-/* Mapa corporal */
+/* Mapa corporal: cuerpo realista y zonas encima */
 .cuerpo {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.cuerpo-lados {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
-.cuerpo-lados .opcion {
-  min-height: 60px;
-  flex-direction: row;
+/* Una sola fila: mujer u hombre, y frente, espalda o cara. */
+.cuerpo-controles {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 6px;
 }
 
-.cuerpo-lados .opcion .ic {
-  width: 34px;
-  height: 34px;
+.cuerpo-tipo,
+.cuerpo-lados {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 6px;
+}
+
+.cuerpo-controles .opcion {
+  min-height: 70px;
+  gap: 2px;
+  padding: 4px 2px;
+  border-width: 3px;
+  font-size: var(--t-menor);
+}
+
+.cuerpo-controles .opcion[aria-pressed="true"]::after {
+  top: 3px;
+  right: 3px;
+  width: 16px;
+  height: 16px;
+}
+
+.cuerpo-todo {
+  min-height: 56px;
+  flex-direction: row;
+  gap: 8px;
+  padding: 6px 8px;
+}
+
+.cuerpo-mini {
+  flex: none;
+  width: 30px;
+  height: 44px;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 .cuerpo-lienzo {
   display: flex;
   justify-content: center;
-  padding: 8px;
+  padding: 6px;
   border-radius: var(--radio-m);
-  background: var(--papel);
+  background: linear-gradient(#f7f8fc, #e8ebf3);
 }
 
 .cuerpo-lienzo svg {
   width: auto;
   max-width: 100%;
-  height: min(58vh, 460px);
+  height: min(64vh, 560px);
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
+.cuerpo-foto {
+  pointer-events: none;
+}
+
+/* Cada zona se ve como una línea suave sobre la piel; al elegirla se pinta
+   de amarillo y recibe una palomita. */
 .zona {
-  fill: var(--niebla);
-  stroke: var(--tinta);
-  stroke-width: 3;
+  fill: transparent;
+  stroke: rgb(255 255 255 / 0.5);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  pointer-events: all;
   cursor: pointer;
 }
 
-.zona-toque {
-  fill: transparent;
-  stroke: transparent;
-  stroke-width: 14;
-  cursor: pointer;
+@media (hover: hover) {
+  .zona:hover {
+    fill: rgb(255 201 60 / 0.25);
+  }
 }
 
 .zona.elegida {
-  fill: var(--maiz);
-  stroke-width: 5;
+  fill: rgb(255 201 60 / 0.55);
+  stroke: var(--tinta);
+  stroke-width: 2.5;
 }
 
+[role="button"]:focus-visible .zona {
+  stroke: var(--anil);
+  stroke-width: 4;
+}
+
+.zona-palomita-fondo,
 .zona-palomita {
   fill: none;
-  stroke: var(--tinta);
-  stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
   pointer-events: none;
 }
 
-.zona-detalle {
-  fill: none;
+.zona-palomita-fondo {
+  stroke: var(--papel);
+  stroke-width: 9;
+}
+
+.zona-palomita {
   stroke: var(--tinta);
-  stroke-width: 3;
-  stroke-linecap: round;
-  pointer-events: none;
+  stroke-width: 4.5;
 }
 
 .cuerpo-elegidas {
@@ -1080,6 +1124,14 @@ main:focus {
   flex-wrap: wrap;
   gap: 6px;
   min-height: 30px;
+}
+
+.chip-quitar {
+  background: var(--papel);
+  color: var(--tinta);
+  cursor: pointer;
+  white-space: normal;
+  text-align: left;
 }
 
 /* Modo paciente: sin texto obligatorio */
@@ -1821,4 +1873,11 @@ details summary {
     background: #fff;
     color: #000;
   }
+}
+
+/* "Todo el cuerpo": el cuerpo chiquito se pinta de amarillo para que se
+   entienda aun sin leer. */
+.cuerpo-todo .cuerpo-mini {
+  border-radius: 8px;
+  background: radial-gradient(closest-side, rgb(255 201 60 / 0.9), rgb(255 201 60 / 0.35) 70%, transparent);
 }

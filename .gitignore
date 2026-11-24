@@ -22,3 +22,6 @@ venv/
 
 # Demostración estática generada
 /dist/
+
+# Trabajo local de los scripts del mapa del cuerpo (renders y MakeHuman)
+scripts/cuerpo/trabajo/

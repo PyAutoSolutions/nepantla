@@ -26,36 +26,109 @@ export const REPORT_REASONS = [
   { id: "other", es: "Otro problema" },
 ];
 
-/* Zonas del mapa corporal. "f-" es de frente y "e-" es de espalda.
-   Derecha e izquierda son las del paciente, no las de quien mira. */
+/* Zonas del mapa corporal. "f-" es de frente, "e-" de espalda y "c-" de la
+   cara vista de cerca. Derecha e izquierda son las del paciente, no las de
+   quien mira. Las formas están en cuerpo-datos.js. */
 export const BODY_ZONES = {
   "f-cabeza": "Cabeza",
   "f-cuello": "Cuello",
-  "f-pecho": "Pecho",
+  "f-hombro-der": "Hombro derecho",
+  "f-hombro-izq": "Hombro izquierdo",
+  "f-pecho": "Centro del pecho",
+  "f-pecho-der": "Pecho, lado derecho",
+  "f-pecho-izq": "Pecho, lado izquierdo",
   "f-abdomen-alto": "Boca del estómago",
-  "f-abdomen-bajo": "Vientre",
+  "f-hipocondrio-der": "Abajo de las costillas, lado derecho",
+  "f-hipocondrio-izq": "Abajo de las costillas, lado izquierdo",
+  "f-ombligo": "Alrededor del ombligo",
+  "f-flanco-der": "Costado derecho del abdomen",
+  "f-flanco-izq": "Costado izquierdo del abdomen",
+  "f-fosa-iliaca-der": "Parte baja del abdomen, lado derecho",
+  "f-fosa-iliaca-izq": "Parte baja del abdomen, lado izquierdo",
+  "f-abdomen-bajo": "Bajo vientre",
+  "f-genitales": "Partes íntimas",
+  "f-ingle-der": "Ingle derecha",
+  "f-ingle-izq": "Ingle izquierda",
   "f-brazo-der": "Brazo derecho",
   "f-brazo-izq": "Brazo izquierdo",
+  "f-codo-der": "Codo derecho",
+  "f-codo-izq": "Codo izquierdo",
+  "f-antebrazo-der": "Antebrazo derecho",
+  "f-antebrazo-izq": "Antebrazo izquierdo",
   "f-mano-der": "Mano derecha",
   "f-mano-izq": "Mano izquierda",
-  "f-pierna-der": "Pierna derecha",
-  "f-pierna-izq": "Pierna izquierda",
+  "f-muslo-der": "Muslo derecho",
+  "f-muslo-izq": "Muslo izquierdo",
+  "f-rodilla-der": "Rodilla derecha",
+  "f-rodilla-izq": "Rodilla izquierda",
+  "f-espinilla-der": "Espinilla derecha",
+  "f-espinilla-izq": "Espinilla izquierda",
   "f-pie-der": "Pie derecho",
   "f-pie-izq": "Pie izquierdo",
   "e-cabeza": "Cabeza (atrás)",
   "e-nuca": "Nuca",
-  "e-espalda-alta": "Espalda alta",
+  "e-hombro-der": "Hombro derecho (atrás)",
+  "e-hombro-izq": "Hombro izquierdo (atrás)",
+  "e-paleta-der": "Paleta derecha (omóplato)",
+  "e-paleta-izq": "Paleta izquierda (omóplato)",
+  "e-espalda-alta": "Espalda alta, en medio",
+  "e-espalda-media": "Espalda, a media altura",
+  "e-rinon-der": "Espalda, lado derecho (riñón)",
+  "e-rinon-izq": "Espalda, lado izquierdo (riñón)",
   "e-espalda-baja": "Espalda baja (cintura)",
-  "e-cadera": "Cadera y glúteos",
-  "e-brazo-izq": "Brazo izquierdo (atrás)",
+  "e-coxis": "Rabadilla (coxis)",
+  "e-nalga-der": "Nalga derecha",
+  "e-nalga-izq": "Nalga izquierda",
   "e-brazo-der": "Brazo derecho (atrás)",
-  "e-mano-izq": "Mano izquierda (dorso)",
+  "e-brazo-izq": "Brazo izquierdo (atrás)",
+  "e-codo-der": "Codo derecho (atrás)",
+  "e-codo-izq": "Codo izquierdo (atrás)",
+  "e-antebrazo-der": "Antebrazo derecho (atrás)",
+  "e-antebrazo-izq": "Antebrazo izquierdo (atrás)",
   "e-mano-der": "Mano derecha (dorso)",
-  "e-pierna-izq": "Pierna izquierda (atrás)",
-  "e-pierna-der": "Pierna derecha (atrás)",
-  "e-pie-izq": "Talón izquierdo",
-  "e-pie-der": "Talón derecho",
+  "e-mano-izq": "Mano izquierda (dorso)",
+  "e-muslo-der": "Muslo derecho (atrás)",
+  "e-muslo-izq": "Muslo izquierdo (atrás)",
+  "e-corva-der": "Corva derecha (atrás de la rodilla)",
+  "e-corva-izq": "Corva izquierda (atrás de la rodilla)",
+  "e-pantorrilla-der": "Pantorrilla derecha",
+  "e-pantorrilla-izq": "Pantorrilla izquierda",
+  "e-talon-der": "Talón y tobillo derecho",
+  "e-talon-izq": "Talón y tobillo izquierdo",
+  "c-frente": "Frente",
+  "c-sien-der": "Sien derecha",
+  "c-sien-izq": "Sien izquierda",
+  "c-ojo-der": "Ojo derecho",
+  "c-ojo-izq": "Ojo izquierdo",
+  "c-oido-der": "Oído derecho",
+  "c-oido-izq": "Oído izquierdo",
+  "c-nariz": "Nariz",
+  "c-cachete-der": "Cachete derecho (mejilla)",
+  "c-cachete-izq": "Cachete izquierdo (mejilla)",
+  "c-boca": "Boca y dientes",
+  "c-quijada-der": "Quijada derecha (muelas)",
+  "c-quijada-izq": "Quijada izquierda (muelas)",
+  "c-garganta": "Garganta",
+  "c-cuello-der": "Cuello, lado derecho",
+  "c-cuello-izq": "Cuello, lado izquierdo",
+  "todo-cuerpo": "Todo el cuerpo",
 };
+
+/* Nombres de zonas de versiones anteriores del mapa, para leer respuestas viejas. */
+const OLD_BODY_ZONES = {
+  "f-pierna-der": "Pierna derecha",
+  "f-pierna-izq": "Pierna izquierda",
+  "e-cadera": "Cadera y glúteos",
+  "e-pierna-der": "Pierna derecha (atrás)",
+  "e-pierna-izq": "Pierna izquierda (atrás)",
+  "e-pie-der": "Talón derecho",
+  "e-pie-izq": "Talón izquierdo",
+};
+
+/** Nombre en español de una zona del cuerpo. */
+export function zoneLabel(id) {
+  return BODY_ZONES[id] || OLD_BODY_ZONES[id] || id;
+}
 
 const norm = (name) => String(name).trim().replace(/\s+/g, " ").toLowerCase();
 
@@ -197,7 +270,7 @@ export function answerText(phrase, answer, data) {
     case "pictogram":
       return (Array.isArray(v) ? v : [v]).map((id) => (data.options[id] ? data.options[id].es : id)).join(", ");
     case "body_map":
-      return (Array.isArray(v) ? v : [v]).map((id) => BODY_ZONES[id] || id).join(", ");
+      return (Array.isArray(v) ? v : [v]).map(zoneLabel).join(", ");
     case "pain_scale":
       return `${Number(v)} de 10`;
     case "duration":

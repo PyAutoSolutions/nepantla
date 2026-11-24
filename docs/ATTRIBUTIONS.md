@@ -8,7 +8,9 @@ repositorio y está en esta lista.
 | Qué | Autoría | Licencia |
 |-----|---------|----------|
 | Código (backend, frontend, scripts, pruebas) | Autores de Nepantla | MIT (archivo `LICENSE`) |
-| Pictogramas (`frontend/icons/pictos.svg`) y logo | Originales de Nepantla | CC BY 4.0 |
+| Pictogramas de interfaz y logo (`frontend/icons/pictos.svg`) | Originales de Nepantla | CC BY 4.0 |
+| 56 pictogramas a color (mismo archivo, lista abajo) | Fluent Emoji Flat, Microsoft Corporation | MIT (`frontend/icons/LICENSE-fluent-emoji.txt`) |
+| Imágenes del mapa del cuerpo (`frontend/img/cuerpo/`) | Render propio del modelo 3D de MakeHuman | Modelo: CC0 1.0. Imágenes: CC0 1.0 |
 | Frases en español (`frontend/data/phrases.es.json`) | Originales de Nepantla | CC BY 4.0 |
 | Letra Atkinson Hyperlegible | Braille Institute of America, Inc. (2020) | SIL Open Font License 1.1 (`frontend/fonts/OFL.txt`) |
 | Generador de códigos QR (`frontend/vendor/qrcode.js`) | Kazuhiko Arase (2009) | MIT |
@@ -19,12 +21,15 @@ La licencia del código **no cubre las voces**. Ver `docs/GOVERNANCE.md`.
 
 ## Pictogramas
 
-Los 124 pictogramas del archivo `frontend/icons/pictos.svg` fueron
-dibujados para este proyecto. No se copió ningún juego de iconos ajeno.
+El archivo `frontend/icons/pictos.svg` tiene 124 pictogramas. Los de la
+interfaz y 15 de contenido son dibujos originales de este proyecto. Desde el
+24 de noviembre de 2026, 56 pictogramas de contenido usan dibujos a color de
+**Fluent Emoji Flat** (ver «Pictogramas a color» más abajo), porque los de línea en
+blanco y negro costaban más trabajo de reconocer.
 
-- Licencia de todos ellos: **Creative Commons Atribución 4.0 Internacional
+- Licencia de los dibujos originales: **Creative Commons Atribución 4.0 Internacional
   (CC BY 4.0)**. Cómo atribuir: «Pictogramas de Nepantla, CC BY 4.0».
-- Están hechos en una cuadrícula de 48 x 48 con trazo de color `currentColor`,
+- Los originales están hechos en una cuadrícula de 48 x 48 con trazo de color `currentColor`,
   así heredan el color del texto y se ven bien en claro y en oscuro.
 - El significado nunca depende solo del color: el rojo y el amarillo
   refuerzan una forma que ya se entiende sin ellos.
@@ -39,7 +44,7 @@ Dos decisiones que conviene conocer antes de modificarlos:
    propias condiciones de uso. Son seis dibujos originales que acompañan a
    los números del 0 al 10.
 
-Lista completa de identificadores (todos con la misma licencia, CC BY 4.0):
+Lista completa de identificadores. Los que aparecen en la sección «Pictogramas a color» usan el dibujo de Fluent Emoji (MIT); los demás son originales (CC BY 4.0):
 
 | | | | |
 |---|---|---|---|
@@ -79,6 +84,47 @@ Para ver todos juntos: `python scripts/contact_sheet.py pictos.png`.
 
 Si se agrega un icono de terceros, hay que anotarlo aquí con su autor, su
 licencia y su origen **antes** de usarlo.
+
+## Pictogramas a color (Fluent Emoji)
+
+Origen: Fluent Emoji Flat de Microsoft Corporation
+(https://github.com/microsoft/fluentui-emoji), tomados del paquete
+`@iconify-json/fluent-emoji-flat` 1.2.6. Licencia MIT; el aviso completo está
+en `frontend/icons/LICENSE-fluent-emoji.txt`. Se combinaron (un dibujo grande
+y, a veces, uno chico en la esquina) con `scripts/pictos/build_pictos.py`. Las
+personas usan el tono de piel medio.
+
+No se usaron los emoji de hospital ni de ambulancia porque llevan una cruz
+roja: `urgencias`, `hospital` y `regresar` siguen siendo los dibujos
+originales con la cruz en color de tinta.
+
+| | | | |
+|---|---|---|---|
+| `acuerdo` | `alarma` | `alergia` | `animal` |
+| `bebe-movimiento` | `beber` | `calendario` | `cartilla` |
+| `cita` | `con-comida` | `consulta` | `convulsion` |
+| `decir-no` | `desmayo` | `diabetes` | `diarrea` |
+| `dolor` | `dolor-cabeza` | `dormido` | `dos-veces` |
+| `edad-bebe` | `edad-nino-chico` | `edad-nino-grande` | `edad-recien-nacido` |
+| `embarazo` | `explicar` | `familia` | `fiebre` |
+| `golpe-cabeza` | `herida` | `inyeccion` | `liquido` |
+| `mareo` | `medicina-hoy` | `medicina-mal` | `meses` |
+| `muestra-sangre` | `nino` | `no-alcohol` | `oido` |
+| `orinar` | `parto` | `pastilla` | `planta` |
+| `pregunta` | `respirar` | `revisar` | `saludo` |
+| `sangre` | `sangre-excremento` | `todos-los-dias` | `tos` |
+| `tres-veces` | `una-vez` | `vision` | `vomito` |
+
+## Imágenes del mapa del cuerpo
+
+`frontend/img/cuerpo/*.webp` son renders hechos para Nepantla con Blender a
+partir del modelo humano de **MakeHuman** (malla base, targets de forma y
+esqueleto), que el proyecto MakeHuman publicó con licencia **CC0 1.0**
+(https://github.com/makehumancommunity/makehuman, archivos `LICENSE.md` y
+`LICENSE.ASSETS.md`). No son fotos de personas reales ni imágenes hechas con
+IA generativa. Las zonas que se pueden tocar (`frontend/js/cuerpo-datos.js`)
+salen del mismo modelo 3D. Cómo se generan: `scripts/cuerpo/LEEME.md`.
+Las imágenes también se entregan con licencia CC0 1.0.
 
 ## Letra
 

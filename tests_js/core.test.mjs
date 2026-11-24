@@ -96,7 +96,7 @@ test("las respuestas se dicen en español sencillo", () => {
   assert.equal(core.answerText(byId.get("urg-001"), { value: "si" }, data), "Sí");
   assert.equal(core.answerText(byId.get("urg-001"), { value: "nose" }, data), "No sabe");
   assert.equal(core.answerText(byId.get("urg-004"), { value: ["sintoma-dolor", "sintoma-tos"] }, data), "Dolor, Tos");
-  assert.equal(core.answerText(byId.get("urg-005"), { value: ["f-pecho", "e-espalda-baja"] }, data), "Pecho, Espalda baja (cintura)");
+  assert.equal(core.answerText(byId.get("urg-005"), { value: ["f-pecho", "e-espalda-baja"] }, data), "Centro del pecho, Espalda baja (cintura)");
   assert.equal(core.answerText(byId.get("urg-006"), { value: 0 }, data), "0 de 10");
   assert.equal(core.answerText(byId.get("urg-007"), { value: "semanas" }, data), "Hace semanas");
   assert.equal(core.answerText(byId.get("urg-001"), { value: null }, data), "Sin respuesta");
@@ -136,8 +136,25 @@ test("la escala de dolor usa seis caritas para once números", () => {
   ]);
 });
 
-test("cada zona del cuerpo tiene nombre y el lado es el del paciente", () => {
-  assert.equal(Object.keys(core.BODY_ZONES).length, 26);
+test("cada zona del cuerpo tiene nombre y el lado es el del paciente", async () => {
+  const { CUERPOS } = await import("../frontend/js/cuerpo-datos.js");
+  assert.equal(Object.keys(core.BODY_ZONES).length, 82);
   assert.equal(core.BODY_ZONES["f-brazo-der"], "Brazo derecho");
   assert.equal(core.BODY_ZONES["e-brazo-izq"], "Brazo izquierdo (atrás)");
+  assert.equal(core.zoneLabel("e-cadera"), "Cadera y glúteos"); // respuestas de la versión anterior
+  const onMap = new Set(["todo-cuerpo"]);
+  for (const [body, views] of Object.entries(CUERPOS)) {
+    for (const [view, data] of Object.entries(views)) {
+      for (const [id, d, x] of data.zonas) {
+        onMap.add(id);
+        assert.ok(core.BODY_ZONES[id], `${body}/${view}: ${id} no tiene nombre`);
+        assert.ok(d.startsWith("M") && d.endsWith("z"), `${body}/${view}: ${id}`);
+        // De frente, la derecha del paciente queda a la izquierda de quien mira; de espalda, al revés.
+        const left = x < data.w / 2;
+        if (id.endsWith("-der")) assert.equal(left, view !== "espalda", `${body}/${view}: ${id}`);
+        if (id.endsWith("-izq")) assert.equal(left, view === "espalda", `${body}/${view}: ${id}`);
+      }
+    }
+  }
+  assert.deepEqual([...onMap].sort(), Object.keys(core.BODY_ZONES).sort());
 });

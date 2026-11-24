@@ -83,7 +83,7 @@ retirarla; si el script encuentra un paquete real, se detiene.
 - Elegir la variante por audio: suena un saludo en cada una y la persona toca la que entiende.
 - Seis escenarios con 83 frases: urgencias, embarazo, niño enfermo, medicinas, consentimiento y señales de alarma.
 - Cada frase tiene dos orillas: arriba el español para el personal; abajo el audio y las respuestas para el paciente.
-- Respuestas sin escribir: sí / no / no sabe, pictogramas, mapa del cuerpo (frente y espalda), dolor de 0 a 10 con caritas y «desde cuándo».
+- Respuestas sin escribir: sí / no / no sabe, pictogramas a color, mapa del cuerpo con un cuerpo humano realista (mujer u hombre; frente, espalda y la cara de cerca; 81 zonas que cubren todo el cuerpo, más «me duele todo el cuerpo»), dolor de 0 a 10 con caritas y «desde cuándo».
 - «Entendí» y «No entendí» en cada frase. Si no entiende dos veces, la app propone pedir intérprete.
 - Modo paciente: sin texto obligatorio y con botones de 56 px o más.
 - Modo emergencia: de un toque, cinco preguntas críticas.
@@ -134,7 +134,8 @@ frontend/           La PWA: HTML, CSS y JavaScript sin frameworks
   sw.js             Service worker (modo sin internet)
   js/               core (reglas), store (IndexedDB), net, audio, vistas
   data/phrases.es.json   Las frases en español
-  icons/pictos.svg  124 pictogramas propios
+  icons/pictos.svg  124 pictogramas (56 a color de Fluent Emoji, MIT)
+  img/cuerpo/       mapa del cuerpo: renders del modelo 3D de MakeHuman (CC0)
 packs/              Paquetes de AUDIO DE PRUEBA en el formato abierto
 docs/               Privacidad, gobernanza, atribuciones, formato, fuentes, pendientes
 scripts/            Generar audios de prueba, iconos, la lista del service worker y el demo estático
@@ -218,13 +219,13 @@ Detalle y cómo comprobarlo: `docs/PRIVACY.md`.
 - `docs/PRIVACY.md`: qué se guarda, dónde y por qué.
 - `docs/GOVERNANCE.md`: hablantes, revisores, guardianes y retiro de voces.
 - `docs/PACK_FORMAT.md`: el formato abierto del paquete de lengua.
-- `docs/ATTRIBUTIONS.md`: licencias de pictogramas, letra y bibliotecas.
+- `docs/ATTRIBUTIONS.md`: licencias de pictogramas, imágenes del cuerpo, letra y bibliotecas.
 - `docs/FUENTES.md`: listas oficiales consultadas para las frases.
 - `docs/PENDIENTES.md`: lo que falta y solo pueden hacer personas.
 - `PROJECT_PROGRESS.md`: bitácora de avance del desarrollo.
 
 ## Licencias
 
-Código: MIT. Pictogramas y frases en español: CC BY 4.0. **Las voces no
+Código: MIT. Pictogramas originales y frases en español: CC BY 4.0. Pictogramas a color: MIT (Microsoft). Imágenes del cuerpo: CC0. **Las voces no
 están cubiertas por estas licencias**: cada paquete lleva la que eligió su
 comunidad.

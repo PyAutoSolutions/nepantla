@@ -1,0 +1,4 @@
+Imágenes del mapa del cuerpo: render 3D hecho para Nepantla a partir del
+modelo humano de MakeHuman (malla base y targets con licencia CC0 1.0,
+https://github.com/makehumancommunity/makehuman). Sin IA generativa.
+Cómo se hicieron: scripts/cuerpo/LEEME.md. Licencia de estas imágenes: CC0 1.0.

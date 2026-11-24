@@ -471,7 +471,8 @@ export function viewAbout(app) {
       h("h2", null, "Créditos"),
       list("ul", [
         "Voces: de quienes las graban y de su comunidad. Cada paquete muestra sus créditos y su licencia en la ficha.",
-        "Pictogramas: originales de Nepantla, licencia CC BY 4.0.",
+        "Pictogramas de la interfaz: originales de Nepantla, licencia CC BY 4.0. Pictogramas a color: Fluent Emoji de Microsoft (licencia MIT).",
+        "Mapa del cuerpo: render del modelo humano 3D de MakeHuman (licencia CC0). Sin IA generativa.",
         "Letra: Atkinson Hyperlegible, del Braille Institute (licencia SIL OFL 1.1).",
         "Código QR: biblioteca de Kazuhiko Arase (licencia MIT).",
       ]),

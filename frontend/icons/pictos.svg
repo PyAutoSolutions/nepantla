@@ -19,7 +19,7 @@
 </defs>
 
 <!-- ============ Interfaz ============ -->
-<symbol id="logo" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 13.050a13 13 0 0 1 0 21.900 13 13 0 0 1 0-21.900z" fill="#FFC93C" stroke="none"/><circle cx="17" cy="24" r="13"/><circle cx="31" cy="24" r="13"/></g></symbol>
+<symbol id="logo" viewBox="0 0 48 48"><g transform="translate(0 -0.5)"><circle cx="18" cy="22" r="13" fill="currentColor"/><path d="M13.13 34.05Q11.5 36.56 5.65 38.9Q5.26 34.35 7.22 29.27Z" fill="currentColor"/><circle cx="30" cy="22" r="13" fill="#16a589"/><path d="M34.87 34.05Q36.5 36.56 42.35 38.9Q42.74 34.35 40.78 29.27Z" fill="#16a589"/><path d="M24 10.47A13 13 0 0 1 24 33.53A13 13 0 0 1 24 10.47Z" fill="#ffc93c"/><rect x="19.75" y="18.75" width="2.3" height="6.5" rx="1.15" fill="#141b45"/><rect x="22.85" y="16.25" width="2.3" height="11.5" rx="1.15" fill="#141b45"/><rect x="25.95" y="18.75" width="2.3" height="6.5" rx="1.15" fill="#141b45"/></g></symbol>
 <symbol id="altavoz" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19h7l10-8v26l-10-8H6z" fill="currentColor"/><path d="M30 18c2.500 3.500 2.500 8.500 0 12M35 12c6 7 6 17 0 24"/></g></symbol>
 <symbol id="pausa" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"><path d="M17 11v26M31 11v26"/></g></symbol>
 <symbol id="detener" viewBox="0 0 48 48"><rect x="11" y="11" width="26" height="26" rx="4" fill="currentColor"/></symbol>

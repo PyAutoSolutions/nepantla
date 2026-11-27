@@ -369,6 +369,18 @@ ninguna parte del cuerpo se quede sin zona.
   Lenguas Indígenas Nacionales del INALI, para pedir orientación sobre cómo
   trabajar con intérpretes del PANITLI. Sin respuesta todavía.
 
+### 13. Logo nuevo (26 nov)
+
+El logo de dos aros se veía genérico. El nuevo mantiene la idea (dos lenguas
+que se cruzan y el "nepantla", el lugar de en medio, en color maíz) pero ahora
+son dos globos de diálogo: el de la izquierda blanco sobre añil (tinta sobre
+papel) y el de la derecha jade. En medio van tres rayitas de voz, porque la
+app solo usa voces humanas. Lo genera `scripts/make_icons.py`: el símbolo
+`logo` del sprite, `favicon.svg` y los PNG de la app instalada. También se
+cambió en el sitio (`docs/index.html`), el video, `docs/pantallas.jpg` y los
+impresos. Pruebas: 140 del backend, 10 de JS y 14 de punta a punta, todas
+pasan.
+
 ### Lo que necesita a una persona
 
 1. Probar el demo en un Android de gama baja y en un iPhone, y recorrerlo
